@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学中文！ - Community Chinese Learning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Times New Roman", "Noto Serif JP", YuMincho, "Hiragino Mincho ProN", serif;
+    }
+    .hover-lift {
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-neutral-50 text-neutral-900 antialiased min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-neutral-950 text-white border-b border-neutral-800 sticky top-0 z-50 shadow-md">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div class="flex items-center space-x-3">
+        <span class="bg-rose-600 text-white font-bold text-lg px-2.5 py-0.5 rounded shadow-sm">学</span>
+        <div>
+          <h1 class="font-bold text-lg leading-none tracking-wide">学中文！ Chinese Hub</h1>
+          <p class="text-xs text-neutral-400 mt-1">Community-driven Language Lab</p>
+        </div>
+      </div>
+      
+      <!-- Day Switcher Buttons -->
+      <div class="flex items-center space-x-2 bg-neutral-900 p-1.5 rounded-xl border border-neutral-800" id="day-navigation">
+        <button onclick="switchDay(1)" id="btn-day1" class="px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer bg-rose-600 text-white shadow-sm">Day 01</button>
+        <button onclick="switchDay(2)" id="btn-day2" class="px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer text-neutral-400 hover:text-white">Day 02</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dynamic Main Content -->
+  <div id="app-root" class="flex-1"></div>
+
+  <!-- Footer -->
+  <footer class="bg-neutral-950 text-neutral-400 py-8 text-center text-xs border-t border-neutral-800">
+    <p>© kodyyork 2026 • Community Chinese Learning Hub</p>
+  </footer>
+
+  <!-- Load Lesson Data Scripts -->
+  <script src="./data/lessons/day01.js"></script>
+  <script src="./data/lessons/day02.js"></script>
+
+  <!-- Controller Logic -->
+  <script>
+    let currentSpeed = 0.75;
+
+    function setSpeed(speed) {
+      currentSpeed = speed;
+      document.getElementById('speed-075').className = speed === 0.75
+        ? "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-900 bg-neutral-900 text-white font-medium transition cursor-pointer"
+        : "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-neutral-900 font-medium transition cursor-pointer";
+      document.getElementById('speed-100').className = speed === 1.0
+        ? "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-900 bg-neutral-900 text-white font-medium transition cursor-pointer"
+        : "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-neutral-900 font-medium transition cursor-pointer";
+    }
+
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'zh-CN';
+        utterance.rate = currentSpeed;
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("お使いのブラウザは音声再生に対応していません。");
+      }
+    }
+
+    function switchDay(dayNum) {
+      document.getElementById('btn-day1').className = dayNum === 1 
+        ? "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer bg-rose-600 text-white shadow-sm" 
+        : "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer text-neutral-400 hover:text-white";
+      document.getElementById('btn-day2').className = dayNum === 2 
+        ? "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer bg-rose-600 text-white shadow-sm" 
+        : "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer text-neutral-400 hover:text-white";
+
+      const data = dayNum === 1 ? day01Data : day02Data;
+      if (data && data.render) {
+        document.getElementById('app-root').innerHTML = data.render();
+        lucide.createIcons();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function checkQuiz(qNum, optIdx, correctIdx, correctMsg, wrongMsg, speakText) {
+      const fb = document.getElementById(`q${qNum}-feedback`);
+      fb.classList.remove('hidden', 'bg-neutral-900', 'text-white', 'bg-neutral-100', 'text-neutral-800');
+
+      if (optIdx === correctIdx) {
+        fb.classList.add('bg-neutral-900', 'text-white');
+        fb.innerHTML = `✓ ${correctMsg}`;
+        if (speakText) speak(speakText);
+      } else {
+        fb.classList.add('bg-neutral-100', 'text-neutral-800');
+        fb.innerHTML = `✕ ${wrongMsg}`;
+      }
+    }
+
+    function revealAnswer(qNum, answerText, speakText) {
+      const slot = document.getElementById(`q${qNum}-slot`);
+      slot.innerHTML = `<span class="text-rose-600 font-bold border-b-2 border-rose-600 px-1.5 py-0.5 animate-pulse">${answerText}</span>`;
+      if (speakText) speak(speakText);
+    }
+
+    function checkInput(qNum, correctAnswers, speakText) {
+      const val = document.getElementById(`q${qNum}-input`).value.trim();
+      const fb = document.getElementById(`q${qNum}-feedback`);
+      fb.classList.remove('hidden', 'bg-neutral-900', 'text-white', 'bg-neutral-100', 'text-neutral-800');
+
+      if (correctAnswers.includes(val)) {
+        fb.classList.add('bg-neutral-900', 'text-white');
+        fb.innerHTML = '✓ 正解です！ 正しい中国語表記です。';
+        if (speakText) speak(speakText);
+      } else {
+        fb.classList.add('bg-neutral-100', 'text-neutral-800');
+        fb.innerHTML = `✕ 残念！ 正解は 「${correctAnswers[0]}」 です。`;
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      switchDay(1);
+    });
+  </script>
+</body>
+</html>
