@@ -39,6 +39,7 @@
       <div class="flex items-center space-x-2 bg-neutral-900 p-1.5 rounded-xl border border-neutral-800" id="day-navigation">
         <button onclick="switchDay(1)" id="btn-day1" class="px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer bg-rose-600 text-white shadow-sm">Day 01</button>
         <button onclick="switchDay(2)" id="btn-day2" class="px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer text-neutral-400 hover:text-white">Day 02</button>
+        <button onclick="switchDay(3)" id="btn-day3" class="px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer text-neutral-400 hover:text-white">Day 03</button>
       </div>
     </div>
   </header>
@@ -54,6 +55,7 @@
   <!-- Load Lesson Data Scripts -->
   <script src="./data/lessons/day01.js"></script>
   <script src="./data/lessons/day02.js"></script>
+  <script src="./data/lessons/day03.js"></script>
 
   <!-- Controller Logic -->
   <script>
@@ -82,14 +84,20 @@
     }
 
     function switchDay(dayNum) {
-      document.getElementById('btn-day1').className = dayNum === 1 
-        ? "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer bg-rose-600 text-white shadow-sm" 
-        : "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer text-neutral-400 hover:text-white";
-      document.getElementById('btn-day2').className = dayNum === 2 
-        ? "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer bg-rose-600 text-white shadow-sm" 
-        : "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer text-neutral-400 hover:text-white";
+      [1, 2, 3].forEach(n => {
+        const btn = document.getElementById(`btn-day${n}`);
+        if (btn) {
+          btn.className = n === dayNum
+            ? "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer bg-rose-600 text-white shadow-sm"
+            : "px-4 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer text-neutral-400 hover:text-white";
+        }
+      });
 
-      const data = dayNum === 1 ? day01Data : day02Data;
+      let data;
+      if (dayNum === 1) data = day01Data;
+      if (dayNum === 2) data = day02Data;
+      if (dayNum === 3) data = day03Data;
+
       if (data && data.render) {
         document.getElementById('app-root').innerHTML = data.render();
         lucide.createIcons();
