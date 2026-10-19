@@ -39,7 +39,7 @@ const day03Data = {
           </div>
         </div>
 
-        <!-- Section 1: Detailed Explanations -->
+        <!-- Section 1: Detailed Explanations & Culture -->
         <section class="space-y-6">
           <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
             <i data-lucide="book-open" class="w-5 h-5 text-rose-600"></i>
@@ -58,19 +58,37 @@ const day03Data = {
               <h4 class="font-bold text-neutral-900 text-base">② 発音の知識：「不 (bù)」の変調ルール</h4>
               <p class="text-neutral-600">
                 「不（bù）」は本来第四声（高いところから落とす音）ですが、<strong>後ろに第四声の言葉が続く時だけ「第二声（bú / 上がる音）」に変化</strong>します！<br>
-                例：「不要（bú yào / いらない）」、「不是（bú shì / 〜ではない）」。言葉の繋がりをなめらかにする中国語ならではの知恵です。
+                例：「不要（bú yào / いらない）」、「不是（bú shì / 〜ではない）」。
               </p>
             </div>
 
             <div class="space-y-2 border-l-2 border-amber-600 pl-4">
               <h4 class="font-bold text-neutral-900 text-base">③ 文化的背景：中国ドリンク文化の「微糖・無糖・去冰」細分化</h4>
               <p class="text-neutral-600">
-                現代の中国のティースタンドやカフェでは、アプリ注文や店頭問わず「甘さ（糖度）」と「氷の量」を自分で選ぶのが当たり前です。「微糖（wēitáng / 控えめ）」「去冰（qùbīng / 氷抜き）」などの単語を知っておくと、一気にネイティブらしい頼み方ができます。
+                現代の中国ティースタンドやLuckin Coffee（瑞幸咖啡）などでは、「甘さ（糖度）」と「氷の量」をスマホアプリで細かく選ぶのが日常です。「微糖（wēitáng / 3分甘め）」「去冰（qùbīng / 氷抜き）」を覚えると超ネイティブ感が出ます！
               </p>
             </div>
           </div>
 
-          <!-- Tone Cards (Neutral Tone & "Bu" Sandhi) -->
+          <!-- Japanese Tips Column -->
+          <div class="bg-rose-50/80 border border-rose-200/80 rounded-xl p-6 shadow-sm space-y-4">
+            <div class="flex items-center space-x-2 text-rose-800 font-bold text-base">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-rose-600"></i>
+              <span>日本人向けTips：軽声の出し方 ＆ ココナッツラテ爆発の雑学</span>
+            </div>
+            <div class="text-xs text-neutral-700 leading-relaxed space-y-3">
+              <p>
+                <strong>【軽声（Neutral Tone）のコツ】</strong><br>
+                軽声は「音を伸ばさず、肩の力を抜いてポトンと軽く声を落とす」イメージです。「ありがとう（xièxie）」の2文字目の「xie」は、日本語でため息をつくように短く添えましょう。
+              </p>
+              <p>
+                <strong>【中国カフェ爆発的ブーム雑学：生椰拿铁】</strong><br>
+                今や中国の若者の国民的ドリンクとなったのが「生椰拿铁（shēngyē nátiě / ココナッツミルクカフェラテ）」！牛乳の代わりに濃厚なココナッツミルクを使ったラテで、中国のLuckin Coffeeから空前の大ブームが巻き起こりました。
+              </p>
+            </div>
+          </div>
+
+          <!-- Tone Cards -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm hover-lift cursor-pointer">
               <div class="flex justify-between items-start mb-3">
@@ -78,7 +96,7 @@ const day03Data = {
                 <span class="text-3xl font-black text-neutral-900">•</span>
               </div>
               <h4 class="font-bold text-neutral-900 text-lg mb-1">トーンをかけず、軽ーく添える音</h4>
-              <p class="text-xs text-neutral-500 mb-5">語尾の「吗 (ma)」や「谢谢 (xièxie)」の2文字目のように軽く添えます。</p>
+              <p class="text-xs text-neutral-500 mb-5">ため息をつくように短くポトンと添えます。</p>
               <button onclick="speak('谢谢')" class="w-full bg-neutral-900 hover:bg-rose-600 text-white font-medium py-2.5 px-4 rounded-lg text-xs flex items-center justify-center space-x-2 transition shadow-sm cursor-pointer">
                 <i data-lucide="play-circle" class="w-4 h-4"></i><span>音声を聞く: <strong>xièxie</strong> (謝謝/ありがとう)</span>
               </button>
