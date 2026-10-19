@@ -39,7 +39,7 @@ const day05Data = {
           </div>
         </div>
 
-        <!-- Section 1: Detailed Explanations -->
+        <!-- Section 1: Detailed Explanations & Culture -->
         <section class="space-y-6">
           <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
             <i data-lucide="book-open" class="w-5 h-5 text-rose-600"></i>
@@ -57,14 +57,32 @@ const day05Data = {
             <div class="space-y-2 border-l-2 border-neutral-900 pl-4">
               <h4 class="font-bold text-neutral-900 text-base">② 感情を強調する構文：「太...了！（〜すぎる！）」</h4>
               <p class="text-neutral-600">
-                「太（tài）＋形容詞＋了（le）」で「〜すぎる！」という強調表現になります。「太贵了！（tài guì le! / 高すぎる！）」や「太好了！（tài hǎo le! / 最高！）」は日常会話の超頻出フレーズです。
+                「太（tài）＋形容詞＋了（le）」で「〜すぎる！」という感情表現になります。「太贵了！（tài guì le! / 高すぎる！）」や「太好了！（tài hǎo le! / 最高！）」は必須フレーズです。
               </p>
             </div>
 
             <div class="space-y-2 border-l-2 border-amber-600 pl-4">
               <h4 class="font-bold text-neutral-900 text-base">③ 文化的背景：完全キャッシュレス社会と支払い時のフレーズ</h4>
               <p class="text-neutral-600">
-                中国では露店から高級店までほぼ100%「微信支付 (WeChat Pay)」または「支付宝 (Alipay)」のQRコード決済です。店員に「扫码（sǎomǎ / コードをスキャンする）」と言われたり、自分から「我扫你（私がスキャンします）」と伝える文化が定着しています。
+                中国ではほぼ100%「微信支付 (WeChat Pay)」または「支付宝 (Alipay)」のQRコード決済です。店員に「扫码（sǎomǎ / コードをスキャンする）」と言われたり、自分から「我扫你（私がスキャンします）」と伝える文化です。
+              </p>
+            </div>
+          </div>
+
+          <!-- Japanese Tips Column -->
+          <div class="bg-rose-50/80 border border-rose-200/80 rounded-xl p-6 shadow-sm space-y-4">
+            <div class="flex items-center space-x-2 text-rose-800 font-bold text-base">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-rose-600"></i>
+              <span>日本人向けTips：「万」の桁と割り勘（AA制）の面白雑学</span>
+            </div>
+            <div class="text-xs text-neutral-700 leading-relaxed space-y-3">
+              <p>
+                <strong>【数字の桁：日本語と同じ『4桁区切り』！】</strong><br>
+                英語は 1,000 (Thousand), 1,000,000 (Million) と「3桁」で区切るため日本人には難しいですが、中国語は日本語と全く同じ**「万（wàn）」**で区切ります！「一万（yí wàn）」はそのまま「1万円」と同じ感覚で理解できます。
+              </p>
+              <p>
+                <strong>【中国の割り勘文化：「AA制（AA zhì）」の由来】</strong><br>
+                中国で割り勘することを「AA制」と言います。Algebraic Average（代数平均）や All Apart の頭文字が由来と言われており、若者の間では超一般用語です！
               </p>
             </div>
           </div>
