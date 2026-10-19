@@ -39,7 +39,7 @@ const day04Data = {
           </div>
         </div>
 
-        <!-- Section 1: Detailed Explanations -->
+        <!-- Section 1: Detailed Explanations & Culture -->
         <section class="space-y-6">
           <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
             <i data-lucide="book-open" class="w-5 h-5 text-rose-600"></i>
@@ -57,14 +57,32 @@ const day04Data = {
             <div class="space-y-2 border-l-2 border-neutral-900 pl-4">
               <h4 class="font-bold text-neutral-900 text-base">② 場所を表す言葉：「在 (zài)」と位置詞</h4>
               <p class="text-neutral-600">
-                英語の in / at / on に相当するのが<strong>「在 (zài)」</strong>です。「主語 ＋ 在 ＋ 場所」で「〜は〜にあります/います」を表します。位置を表す「左边（zuǒbian / 左側）」「右边（yòubian / 右側）」や「前面（qiánmiàn / 前）」を組み合わせると指示がとてもスムーズになります。
+                英語の in / at / on に相当するのが<strong>「在 (zài)」</strong>です。「主語 ＋ 在 ＋ 場所」で「〜は〜にあります/います」を表します。「左边（zuǒbian）」「右边（yòubian）」「前面（qiánmiàn）」を組み合わせると指示が完璧になります。
               </p>
             </div>
 
             <div class="space-y-2 border-l-2 border-amber-600 pl-4">
               <h4 class="font-bold text-neutral-900 text-base">③ 文化的背景：中国の配車アプリ（滴滴 DiDi）とタクシー文化</h4>
               <p class="text-neutral-600">
-                現代の中国では流しのタクシーよりも「滴滴出行 (DiDi)」などの配車アプリが主流です。アプリで目的地を入力していても、乗車時に運転手から「是去...吗？（〜に行きますか？）」と確認されるため、今日のフレーズを覚えておくと現地で非常に役立ちます。
+                現代の中国では流しのタクシーよりも「滴滴出行 (DiDi)」などの配車アプリが主流です。乗車時に運転手さんから「是去...吗？（〜に行きますか？）」と電話や口頭で確認されるため、今日のフレーズがそのまま役立ちます。
+              </p>
+            </div>
+          </div>
+
+          <!-- Japanese Tips Column -->
+          <div class="bg-rose-50/80 border border-rose-200/80 rounded-xl p-6 shadow-sm space-y-4">
+            <div class="flex items-center space-x-2 text-rose-800 font-bold text-base">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-rose-600"></i>
+              <span>日本人向けTips：「师傅」の正しいニュアンス ＆ 乗り物の安検雑学</span>
+            </div>
+            <div class="text-xs text-neutral-700 leading-relaxed space-y-3">
+              <p>
+                <strong>【「师傅（shīfu）」ってカンフーの師匠？】</strong><br>
+                映画の影響で「師匠！」に聞こえますが、現代中国ではタクシー運転手、整備士、鍵屋さんなど「技術を持ったプロの職人さん」へ親しみと敬意を込めて呼ぶ日常語です！
+              </p>
+              <p>
+                <strong>【中国交通雑学：地下鉄や高速鉄道に乗る前の「安检（手荷物検査）」】</strong><br>
+                中国ではタクシーだけでなく地下鉄や新幹線（高铁）に乗る際、空港のようなセキュリティチェック「安检（ānjiǎn）」が必ずあります！飲み物を持っていると「飲んで見せて」と言われることもある面白い文化です。
               </p>
             </div>
           </div>
