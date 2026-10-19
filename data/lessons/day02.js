@@ -39,7 +39,7 @@ const day02Data = {
           </div>
         </div>
 
-        <!-- Section 1: Detailed Explanations -->
+        <!-- Section 1: Detailed Explanations & Cultural Column -->
         <section class="space-y-6">
           <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
             <i data-lucide="book-open" class="w-5 h-5 text-rose-600"></i>
@@ -69,6 +69,24 @@ const day02Data = {
             </div>
           </div>
 
+          <!-- Japanese Pronunciation & Culture Column -->
+          <div class="bg-rose-50/80 border border-rose-200/80 rounded-xl p-6 shadow-sm space-y-4">
+            <div class="flex items-center space-x-2 text-rose-800 font-bold text-base">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-rose-600"></i>
+              <span>日本人向け発音Tips ＆ カフェカルチャー雑学</span>
+            </div>
+            <div class="text-xs text-neutral-700 leading-relaxed space-y-3">
+              <p>
+                <strong>【第二声のコツ：関西弁の「ほんまに！？」の上がり目】</strong><br>
+                第二声（á）は「音階のドレミ」で考えるよりも、驚いて「えっ！？」と聞き返す時の声や、関西弁で「ほんまに！？」と急上昇する時のイントネーションをイメージすると一発でコツが掴めます！
+              </p>
+              <p>
+                <strong>【豆知識：カフェラテはなぜ「拿铁（nátiě）」？】</strong><br>
+                漢字だけ見ると「鉄を持つ」みたいで固そうですが、実はイタリア語の "Latte"（ラテ）の「音訳」です。決して鉄分が入っているわけではありません（笑）。
+              </p>
+            </div>
+          </div>
+
           <!-- Tone Cards -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm hover-lift cursor-pointer">
@@ -76,8 +94,8 @@ const day02Data = {
                 <span class="text-xs font-semibold px-2.5 py-1 bg-rose-50 text-rose-700 rounded-full border border-rose-100">第二声 (2nd Tone)</span>
                 <span class="text-3xl font-black text-neutral-900">á</span>
               </div>
-              <h4 class="font-bold text-neutral-900 text-lg mb-1">下から上へ駆け上がる (Rising)</h4>
-              <p class="text-xs text-neutral-500 mb-5">「えっ！？」と聞き返すように音を上げます。</p>
+              <h4 class="font-bold text-neutral-900 text-lg mb-1">下から上へ「えっ！？」と駆け上がる</h4>
+              <p class="text-xs text-neutral-500 mb-5">驚いて聞き返す時や「ほんまに！？」の音階。</p>
               <button onclick="speak('麻')" class="w-full bg-neutral-900 hover:bg-rose-600 text-white font-medium py-2.5 px-4 rounded-lg text-xs flex items-center justify-center space-x-2 transition shadow-sm cursor-pointer">
                 <i data-lucide="play-circle" class="w-4 h-4"></i><span>音声を聞く: <strong>má</strong> (麻/しびれる)</span>
               </button>
