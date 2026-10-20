@@ -74,7 +74,7 @@ const day03Data = {
           <div class="bg-rose-50/80 border border-rose-200/80 rounded-xl p-6 shadow-sm space-y-4">
             <div class="flex items-center space-x-2 text-rose-800 font-bold text-base">
               <i data-lucide="lightbulb" class="w-5 h-5 text-rose-600"></i>
-              <span>日本人向けTips：軽声の出し方 ＆ ココナッツラテ爆発の雑学</span>
+              <span>日本人向けTips：軽声の出し方 ＆ ココナッツラテ爆誕の雑学</span>
             </div>
             <div class="text-xs text-neutral-700 leading-relaxed space-y-3">
               <p>
