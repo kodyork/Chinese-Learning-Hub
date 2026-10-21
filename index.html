@@ -35,18 +35,14 @@
         </div>
       </div>
       
-      <!-- Week & Day Selector (7-Day Grouping) -->
+      <!-- Week & Day Selector -->
       <div class="flex items-center space-x-2 bg-neutral-900 p-1.5 rounded-xl border border-neutral-800">
-        <!-- Week Selector -->
         <select id="week-select" onchange="changeWeek(this.value)" class="bg-neutral-800 text-rose-400 text-xs font-bold px-3 py-1.5 rounded-lg border border-neutral-700 focus:outline-none cursor-pointer">
           <option value="1">Week 1 (Day 1 - 7)</option>
           <option value="2">Week 2 (Day 8 - 14)</option>
         </select>
         
-        <!-- Day Buttons Container -->
-        <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none">
-          <!-- JSで動的にボタン生成 -->
-        </div>
+        <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none"></div>
       </div>
     </div>
   </header>
@@ -59,17 +55,12 @@
     <p>© kodyyork 2026 • Community Chinese Learning Hub</p>
   </footer>
 
-  <!-- Load Lesson Data Scripts -->
+  <!-- Load Lesson Data Scripts (エラーになっても止まらない安全読み込み) -->
   <script src="./data/lessons/day01.js"></script>
   <script src="./data/lessons/day02.js"></script>
   <script src="./data/lessons/day03.js"></script>
   <script src="./data/lessons/day04.js"></script>
   <script src="./data/lessons/day05.js"></script>
-  <script src="./data/lessons/day06.js"></script>
-  <script src="./data/lessons/day07.js"></script>
-  <script src="./data/lessons/day08.js"></script>
-  <script src="./data/lessons/day09.js"></script>
-  <script src="./data/lessons/day10.js"></script>
 
   <!-- Controller Logic -->
   <script>
@@ -89,7 +80,6 @@
       container.innerHTML = '';
 
       for (let i = startDay; i < startDay + 7; i++) {
-        if (i > 10) break; // 現在Day 10まで実装
         const dayStr = i < 10 ? `0${i}` : `${i}`;
         const btn = document.createElement('button');
         btn.id = `btn-day${i}`;
@@ -132,7 +122,6 @@
     function switchDay(dayNum) {
       currentActiveDay = dayNum;
 
-      // ボタンのアクティブ化
       const startDay = (currentActiveWeek - 1) * 7 + 1;
       for (let i = startDay; i < startDay + 7; i++) {
         const btn = document.getElementById(`btn-day${i}`);
@@ -143,18 +132,33 @@
         }
       }
 
-      // データの取得
-      const lessonDataMap = {
-        1: window.day01Data, 2: window.day02Data, 3: window.day03Data, 4: window.day04Data, 5: window.day05Data,
-        6: window.day06Data, 7: window.day07Data, 8: window.day08Data, 9: window.day09Data, 10: window.day10Data
-      };
+      // 変数が存在するか安全にチェック
+      let data = null;
+      try {
+        if (dayNum === 1 && typeof day01Data !== 'undefined') data = day01Data;
+        if (dayNum === 2 && typeof day02Data !== 'undefined') data = day02Data;
+        if (dayNum === 3 && typeof day03Data !== 'undefined') data = day03Data;
+        if (dayNum === 4 && typeof day04Data !== 'undefined') data = day04Data;
+        if (dayNum === 5 && typeof day05Data !== 'undefined') data = day05Data;
+        if (dayNum === 6 && typeof day06Data !== 'undefined') data = day06Data;
+        if (dayNum === 7 && typeof day07Data !== 'undefined') data = day07Data;
+      } catch (e) {
+        console.log(e);
+      }
 
-      const data = lessonDataMap[dayNum];
+      const root = document.getElementById('app-root');
       if (data && data.render) {
-        document.getElementById('app-root').innerHTML = data.render();
+        root.innerHTML = data.render();
         lucide.createIcons();
         setSpeed(currentSpeed);
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        root.innerHTML = `
+          <div class="max-w-4xl mx-auto px-4 py-20 text-center">
+            <p class="text-lg font-bold text-neutral-500">Day ${dayNum < 10 ? '0' + dayNum : dayNum} の教材コンテンツは現在準備中です！</p>
+            <p class="text-xs text-neutral-400 mt-2">Week 1 の Day 01 〜 Day 05 をお楽しみください。</p>
+          </div>
+        `;
       }
     }
 
