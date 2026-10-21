@@ -69,6 +69,22 @@
     </div>
   </footer>
 
+  <!-- Load Lesson Data Scripts (Day 01 - Day 14) -->
+  <script src="./data/lessons/day01.js"></script>
+  <script src="./data/lessons/day02.js"></script>
+  <script src="./data/lessons/day03.js"></script>
+  <script src="./data/lessons/day04.js"></script>
+  <script src="./data/lessons/day05.js"></script>
+  <script src="./data/lessons/day06.js"></script>
+  <script src="./data/lessons/day07.js"></script>
+  <script src="./data/lessons/day08.js"></script>
+  <script src="./data/lessons/day09.js"></script>
+  <script src="./data/lessons/day10.js"></script>
+  <script src="./data/lessons/day11.js"></script>
+  <script src="./data/lessons/day12.js"></script>
+  <script src="./data/lessons/day13.js"></script>
+  <script src="./data/lessons/day14.js"></script>
+
   <!-- Controller Logic -->
   <script>
     let currentSpeed = 0.75;
@@ -135,7 +151,7 @@
         btnAbout.className = "px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5";
       }
 
-      // Highlight active day button (if within current week view)
+      // Highlight active day button
       const startDay = (currentActiveWeek - 1) * 7 + 1;
       for (let i = startDay; i < startDay + 7; i++) {
         const btn = document.getElementById(`btn-day${i}`);
@@ -146,55 +162,47 @@
         }
       }
 
-      const dayStr = dayNum < 10 ? `0${dayNum}` : `${dayNum}`;
-      const scriptId = `script-day${dayStr}`;
-      const variableName = `day${dayStr}Data`;
+      const lessonDataMap = {
+        1: typeof day01Data !== 'undefined' ? day01Data : null,
+        2: typeof day02Data !== 'undefined' ? day02Data : null,
+        3: typeof day03Data !== 'undefined' ? day03Data : null,
+        4: typeof day04Data !== 'undefined' ? day04Data : null,
+        5: typeof day05Data !== 'undefined' ? day05Data : null,
+        6: typeof day06Data !== 'undefined' ? day06Data : null,
+        7: typeof day07Data !== 'undefined' ? day07Data : null,
+        8: typeof day08Data !== 'undefined' ? day08Data : null,
+        9: typeof day09Data !== 'undefined' ? day09Data : null,
+        10: typeof day10Data !== 'undefined' ? day10Data : null,
+        11: typeof day11Data !== 'undefined' ? day11Data : null,
+        12: typeof day12Data !== 'undefined' ? day12Data : null,
+        13: typeof day13Data !== 'undefined' ? day13Data : null,
+        14: typeof day14Data !== 'undefined' ? day14Data : null,
+        15: typeof day15Data !== 'undefined' ? day15Data : null,
+        16: typeof day16Data !== 'undefined' ? day16Data : null,
+        17: typeof day17Data !== 'undefined' ? day17Data : null,
+        18: typeof day18Data !== 'undefined' ? day18Data : null,
+        19: typeof day19Data !== 'undefined' ? day19Data : null,
+        20: typeof day20Data !== 'undefined' ? day20Data : null,
+        21: typeof day21Data !== 'undefined' ? day21Data : null
+      };
 
-      // すでにスクリプトが読み込まれている場合
-      if (window[variableName]) {
-        renderLessonContent(window[variableName]);
-        return;
-      }
-
-      // まだ読み込まれていない場合は動的に script タグを生成してロード
-      let script = document.getElementById(scriptId);
-      if (!script) {
-        script = document.createElement('script');
-        script.id = scriptId;
-        script.src = `./data/lessons/day${dayStr}.js`;
-        script.onload = () => {
-          if (window[variableName]) {
-            renderLessonContent(window[variableName]);
-          } else {
-            showErrorState(dayNum);
-          }
-        };
-        script.onerror = () => showErrorState(dayNum);
-        document.head.appendChild(script);
-      }
-    }
-
-    function renderLessonContent(data) {
+      const data = lessonDataMap[dayNum];
       const root = document.getElementById('app-root');
+
       if (data && data.render) {
         root.innerHTML = data.render();
         lucide.createIcons();
         setSpeed(currentSpeed);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        showErrorState(currentActiveDay);
+        const dayStr = dayNum < 10 ? `0${dayNum}` : `${dayNum}`;
+        root.innerHTML = `
+          <div class="max-w-4xl mx-auto px-4 py-20 text-center">
+            <p class="text-lg font-bold text-neutral-500">Day ${dayStr} のファイル（day${dayStr}.js）がまだ追加されていないか読み込めません。</p>
+            <p class="text-xs text-neutral-400 mt-2">data/lessons/ ディレクトリ内に該当ファイルが存在するかご確認ください。</p>
+          </div>
+        `;
       }
-    }
-
-    function showErrorState(dayNum) {
-      const root = document.getElementById('app-root');
-      const dayStr = dayNum < 10 ? `0${dayNum}` : `${dayNum}`;
-      root.innerHTML = `
-        <div class="max-w-4xl mx-auto px-4 py-20 text-center">
-          <p class="text-lg font-bold text-neutral-500">Day ${dayStr} のファイル（day${dayStr}.js）がまだ追加されていないか読み込めません。</p>
-          <p class="text-xs text-neutral-400 mt-2">data/lessons/ ディレクトリ内に該当ファイルが存在するかご確認ください。</p>
-        </div>
-      `;
     }
 
     function showAboutPage() {
@@ -244,8 +252,8 @@
               </div>
 
               <p class="text-sm text-neutral-700 leading-relaxed">
-                XXX <br>
-                YYY
+                こんにちは！kodyorkと申します。2023年9月から2025年7月まで北京に留学していました。<br>
+                その時の経験を少しでも還元するために、実践で使いやすい中国語フレーズの提供をするためのプラットフォームを運営しています。
               </p>
 
               <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3 text-xs">
