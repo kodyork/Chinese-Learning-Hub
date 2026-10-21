@@ -67,21 +67,31 @@
 
     function setSpeed(speed) {
       currentSpeed = speed;
-      document.getElementById('speed-075').className = speed === 0.75
-        ? "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-900 bg-neutral-900 text-white font-medium transition cursor-pointer"
-        : "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-neutral-900 font-medium transition cursor-pointer";
-      document.getElementById('speed-100').className = speed === 1.0
-        ? "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-900 bg-neutral-900 text-white font-medium transition cursor-pointer"
-        : "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-neutral-900 font-medium transition cursor-pointer";
+      
+      const btn075 = document.getElementById('speed-075');
+      const btn100 = document.getElementById('speed-100');
+
+      if (btn075 && btn100) {
+        btn075.className = speed === 0.75
+          ? "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-900 bg-neutral-900 text-white font-medium transition cursor-pointer"
+          : "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-neutral-900 font-medium transition cursor-pointer";
+        btn100.className = speed === 1.0
+          ? "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-900 bg-neutral-900 text-white font-medium transition cursor-pointer"
+          : "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-neutral-900 font-medium transition cursor-pointer";
+      }
     }
 
     function speak(text) {
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel();
-        const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'zh-CN';
-        utterance.rate = currentSpeed;
-        window.speechSynthesis.speak(utterance);
+        
+        // 音声キャンセルの処理待ちとして50ミリ秒遅延させてから再生（ブラウザの速度無視バグ対策）
+        setTimeout(() => {
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'zh-CN';
+          utterance.rate = parseFloat(currentSpeed);
+          window.speechSynthesis.speak(utterance);
+        }, 50);
       } else {
         alert("お使いのブラウザは音声再生に対応していません。");
       }
@@ -107,6 +117,10 @@
       if (data && data.render) {
         document.getElementById('app-root').innerHTML = data.render();
         lucide.createIcons();
+        
+        // 画面切り替え後にも現在選択されているスピードの見た目を確実に適用
+        setSpeed(currentSpeed);
+        
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
