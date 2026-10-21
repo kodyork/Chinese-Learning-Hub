@@ -27,21 +27,29 @@
   <!-- Header -->
   <header class="bg-neutral-950 text-white border-b border-neutral-800 sticky top-0 z-50 shadow-md">
     <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="switchDay(currentActiveDay)">
         <span class="bg-rose-600 text-white font-bold text-lg px-2.5 py-0.5 rounded shadow-sm">学</span>
         <div>
           <h1 class="font-bold text-lg leading-none tracking-wide">学中文！ Chinese Hub</h1>
         </div>
       </div>
       
-      <!-- Week & Day Selector -->
-      <div class="flex items-center space-x-2 bg-neutral-900 p-1.5 rounded-xl border border-neutral-800">
-        <select id="week-select" onchange="changeWeek(this.value)" class="bg-neutral-800 text-rose-400 text-xs font-bold px-3 py-1.5 rounded-lg border border-neutral-700 focus:outline-none cursor-pointer">
-          <option value="1">Week 1 (Day 1 - 7)</option>
-          <option value="2">Week 2 (Day 8 - 14)</option>
-        </select>
-        
-        <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none"></div>
+      <!-- Week & Day Selector & About Navigation -->
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        <div class="flex items-center space-x-2 bg-neutral-900 p-1.5 rounded-xl border border-neutral-800">
+          <select id="week-select" onchange="changeWeek(this.value)" class="bg-neutral-800 text-rose-400 text-xs font-bold px-3 py-1.5 rounded-lg border border-neutral-700 focus:outline-none cursor-pointer">
+            <option value="1">Week 1 (Day 1 - 7)</option>
+            <option value="2">Week 2 (Day 8 - 14)</option>
+            <option value="3">Week 3 (Day 15 - 21)</option>
+          </select>
+          
+          <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none"></div>
+        </div>
+
+        <button onclick="showAboutPage()" id="btn-about" class="px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5">
+          <i data-lucide="user" class="w-3.5 h-3.5 text-rose-500"></i>
+          <span>About</span>
+        </button>
       </div>
     </div>
   </header>
@@ -51,24 +59,15 @@
 
   <!-- Footer -->
   <footer class="bg-neutral-950 text-neutral-400 py-8 text-center text-xs border-t border-neutral-800">
-    <p>© kodyork 2026</p>
+    <div class="max-w-5xl mx-auto px-4 space-y-3">
+      <p>© kodyork 2026</p>
+      <div class="flex justify-center space-x-4 text-neutral-500">
+        <button onclick="switchDay(currentActiveDay)" class="hover:text-rose-400 transition">Lessons</button>
+        <span>•</span>
+        <button onclick="showAboutPage()" class="hover:text-rose-400 transition">About Admin</button>
+      </div>
+    </div>
   </footer>
-
-  <!-- Load Lesson Data Scripts (Day 01 - Day 14) -->
-  <script src="./data/lessons/day01.js"></script>
-  <script src="./data/lessons/day02.js"></script>
-  <script src="./data/lessons/day03.js"></script>
-  <script src="./data/lessons/day04.js"></script>
-  <script src="./data/lessons/day05.js"></script>
-  <script src="./data/lessons/day06.js"></script>
-  <script src="./data/lessons/day07.js"></script>
-  <script src="./data/lessons/day08.js"></script>
-  <script src="./data/lessons/day09.js"></script>
-  <script src="./data/lessons/day10.js"></script>
-  <script src="./data/lessons/day11.js"></script>
-  <script src="./data/lessons/day12.js"></script>
-  <script src="./data/lessons/day13.js"></script>
-  <script src="./data/lessons/day14.js"></script>
 
   <!-- Controller Logic -->
   <script>
@@ -130,6 +129,13 @@
     function switchDay(dayNum) {
       currentActiveDay = dayNum;
 
+      // Reset About button style
+      const btnAbout = document.getElementById('btn-about');
+      if (btnAbout) {
+        btnAbout.className = "px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5";
+      }
+
+      // Highlight active day button (if within current week view)
       const startDay = (currentActiveWeek - 1) * 7 + 1;
       for (let i = startDay; i < startDay + 7; i++) {
         const btn = document.getElementById(`btn-day${i}`);
@@ -140,39 +146,144 @@
         }
       }
 
-      const lessonDataMap = {
-        1: typeof day01Data !== 'undefined' ? day01Data : null,
-        2: typeof day02Data !== 'undefined' ? day02Data : null,
-        3: typeof day03Data !== 'undefined' ? day03Data : null,
-        4: typeof day04Data !== 'undefined' ? day04Data : null,
-        5: typeof day05Data !== 'undefined' ? day05Data : null,
-        6: typeof day06Data !== 'undefined' ? day06Data : null,
-        7: typeof day07Data !== 'undefined' ? day07Data : null,
-        8: typeof day08Data !== 'undefined' ? day08Data : null,
-        9: typeof day09Data !== 'undefined' ? day09Data : null,
-        10: typeof day10Data !== 'undefined' ? day10Data : null,
-        11: typeof day11Data !== 'undefined' ? day11Data : null,
-        12: typeof day12Data !== 'undefined' ? day12Data : null,
-        13: typeof day13Data !== 'undefined' ? day13Data : null,
-        14: typeof day14Data !== 'undefined' ? day14Data : null
-      };
+      const dayStr = dayNum < 10 ? `0${dayNum}` : `${dayNum}`;
+      const scriptId = `script-day${dayStr}`;
+      const variableName = `day${dayStr}Data`;
 
-      const data = lessonDataMap[dayNum];
+      // すでにスクリプトが読み込まれている場合
+      if (window[variableName]) {
+        renderLessonContent(window[variableName]);
+        return;
+      }
+
+      // まだ読み込まれていない場合は動的に script タグを生成してロード
+      let script = document.getElementById(scriptId);
+      if (!script) {
+        script = document.createElement('script');
+        script.id = scriptId;
+        script.src = `./data/lessons/day${dayStr}.js`;
+        script.onload = () => {
+          if (window[variableName]) {
+            renderLessonContent(window[variableName]);
+          } else {
+            showErrorState(dayNum);
+          }
+        };
+        script.onerror = () => showErrorState(dayNum);
+        document.head.appendChild(script);
+      }
+    }
+
+    function renderLessonContent(data) {
       const root = document.getElementById('app-root');
-
       if (data && data.render) {
         root.innerHTML = data.render();
         lucide.createIcons();
         setSpeed(currentSpeed);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        root.innerHTML = `
-          <div class="max-w-4xl mx-auto px-4 py-20 text-center">
-            <p class="text-lg font-bold text-neutral-500">Day ${dayNum < 10 ? '0' + dayNum : dayNum} のファイルが読み込めません。</p>
-            <p class="text-xs text-neutral-400 mt-2">data/lessons/ ディレクトリ内に該当ファイルがあるか確認してください。</p>
-          </div>
-        `;
+        showErrorState(currentActiveDay);
       }
+    }
+
+    function showErrorState(dayNum) {
+      const root = document.getElementById('app-root');
+      const dayStr = dayNum < 10 ? `0${dayNum}` : `${dayNum}`;
+      root.innerHTML = `
+        <div class="max-w-4xl mx-auto px-4 py-20 text-center">
+          <p class="text-lg font-bold text-neutral-500">Day ${dayStr} のファイル（day${dayStr}.js）がまだ追加されていないか読み込めません。</p>
+          <p class="text-xs text-neutral-400 mt-2">data/lessons/ ディレクトリ内に該当ファイルが存在するかご確認ください。</p>
+        </div>
+      `;
+    }
+
+    function showAboutPage() {
+      const btnAbout = document.getElementById('btn-about');
+      if (btnAbout) {
+        btnAbout.className = "px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-rose-500 bg-rose-600 text-white shadow-sm flex items-center space-x-1.5";
+      }
+
+      const startDay = (currentActiveWeek - 1) * 7 + 1;
+      for (let i = startDay; i < startDay + 7; i++) {
+        const btn = document.getElementById(`btn-day${i}`);
+        if (btn) {
+          btn.className = "px-2.5 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 text-neutral-400 hover:text-white";
+        }
+      }
+
+      const root = document.getElementById('app-root');
+      root.innerHTML = `
+        <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
+          <div class="absolute -top-24 -right-24 w-96 h-96 bg-rose-950/30 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-flex items-center space-x-2 text-rose-400 text-xs font-semibold tracking-wider uppercase mb-3 bg-rose-950/50 px-3 py-1 rounded-full border border-rose-900/50">
+              <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+              <span>Administrator Profile</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-100">
+              ウェブサイト管理人について
+            </h2>
+          </div>
+        </section>
+
+        <main class="max-w-4xl mx-auto px-4 py-12 space-y-10">
+          <div class="bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="shrink-0 text-center">
+              <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-neutral-100 border-4 border-rose-100 overflow-hidden shadow-inner flex items-center justify-center mx-auto relative">
+                <i data-lucide="user" class="w-16 h-16 text-neutral-300"></i>
+              </div>
+              <span class="inline-block mt-3 px-3 py-1 bg-rose-50 text-rose-700 text-xs font-bold rounded-full border border-rose-200">
+                kodyork
+              </span>
+            </div>
+
+            <div class="space-y-4 flex-1 text-center md:text-left">
+              <div>
+                <h3 class="text-2xl font-bold text-neutral-900">kodyork</h3>
+                <p class="text-xs text-rose-600 font-semibold tracking-wide uppercase mt-0.5">Creator & Language Enthusiast</p>
+              </div>
+
+              <p class="text-sm text-neutral-700 leading-relaxed">
+                XXX <br>
+                YYY
+              </p>
+
+              <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3 text-xs">
+                <div class="flex items-center space-x-1.5 text-neutral-600 bg-neutral-100 px-3 py-1.5 rounded-lg">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-600"></i>
+                  <span>Japan</span>
+                </div>
+                <div class="flex items-center space-x-1.5 text-neutral-600 bg-neutral-100 px-3 py-1.5 rounded-lg">
+                  <i data-lucide="languages" class="w-3.5 h-3.5 text-rose-600"></i>
+                  <span>Japanese / English / Chinese</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Links / Contact -->
+          <div class="bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
+            <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
+              <i data-lucide="link" class="w-5 h-5 text-rose-600"></i>
+              <h4 class="text-lg font-bold text-neutral-900">リンク・お問い合わせ</h4>
+            </div>
+            
+            <p class="text-xs text-neutral-600">
+              ご質問やフィードバックなどがございましたら、以下のリンクよりお気軽にご連絡ください。
+            </p>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a href="https://github.com/kodyork" target="_blank" class="inline-flex items-center space-x-2 bg-neutral-900 text-white px-4 py-2 rounded-xl text-xs font-medium hover:bg-neutral-800 transition">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+          </div>
+        </main>
+      `;
+
+      lucide.createIcons();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function checkQuiz(qNum, optIdx, correctIdx, correctMsg, wrongMsg, speakText) {
