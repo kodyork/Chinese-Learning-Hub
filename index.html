@@ -235,11 +235,12 @@
         </section>
 
         <main class="max-w-4xl mx-auto px-4 py-12 space-y-10">
+          <!-- Profile Card -->
           <div class="bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-center md:items-start gap-8">
             <div class="shrink-0 text-center">
-             <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-neutral-100 border-4 border-rose-100 overflow-hidden shadow-inner flex items-center justify-center mx-auto relative">
-  <img src="Grad ID Photo" alt="kodyork" class="w-full h-full object-cover">
-</div>
+              <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-neutral-100 border-4 border-rose-100 overflow-hidden shadow-inner flex items-center justify-center mx-auto relative">
+                <img src="Grad ID Photo" alt="kodyork" class="w-full h-full object-cover">
+              </div>
               <span class="inline-block mt-3 px-3 py-1 bg-rose-50 text-rose-700 text-xs font-bold rounded-full border border-rose-200">
                 kodyork
               </span>
@@ -259,14 +260,127 @@
               <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3 text-xs">
                 <div class="flex items-center space-x-1.5 text-neutral-600 bg-neutral-100 px-3 py-1.5 rounded-lg">
                   <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-600"></i>
-                  <span>Japan</span>
+                  <span>Beijing / Japan</span>
                 </div>
                 <div class="flex items-center space-x-1.5 text-neutral-600 bg-neutral-100 px-3 py-1.5 rounded-lg">
                   <i data-lucide="languages" class="w-3.5 h-3.5 text-rose-600"></i>
-                  <span>Japanese / English / Chinese</span>
+                  <span>Japanese / Chinese</span>
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Recommended Materials Card -->
+          <div class="bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
+              <i data-lucide="book-open" class="w-5 h-5 text-rose-600"></i>
+              <h4 class="text-lg font-bold text-neutral-900">おすすめ中国語教材・リソース</h4>
+            </div>
+            
+            <p class="text-xs text-neutral-600 leading-relaxed">
+              学習を進める上で非常に役立つ、おすすめの単語帳、文法書、読解サイト、ポッドキャストを厳選してご紹介します。
+            </p>
+
+            <!-- ① 単語 -->
+            <div class="space-y-3 pt-2">
+              <h5 class="text-sm font-bold text-neutral-900 flex items-center space-x-1.5">
+                <i data-lucide="bookmark" class="w-4 h-4 text-rose-600"></i>
+                <span>① 単語</span>
+              </h5>
+              <div class="grid gap-3 pl-4 text-xs">
+                <div>
+                  <span class="font-bold text-neutral-800">【導入期】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B0a1N1mZd" target="_blank" class="text-rose-600 hover:underline font-medium">新ゼロからスタート中国語単語BASIC1000</a></li>
+                    <li><a href="https://link.amazon/B09djPVGe" target="_blank" class="text-rose-600 hover:underline font-medium">合格奪取! 新HSK1~4級 単語トレーニングブック</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="font-bold text-neutral-800">【洋書】（国外でかなり有名）</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B05igNkSA" target="_blank" class="text-rose-600 hover:underline font-medium">2000 Most Common Chinese Words in Context: Get Fluent & Increase Your Chinese Vocabulary with 2000 Chinese Phrases</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ② 文法 -->
+            <div class="space-y-3 pt-3 border-t border-neutral-100">
+              <h5 class="text-sm font-bold text-neutral-900 flex items-center space-x-1.5">
+                <i data-lucide="file-text" class="w-4 h-4 text-rose-600"></i>
+                <span>② 文法</span>
+              </h5>
+              <div class="grid gap-3 pl-4 text-xs">
+                <div>
+                  <span class="font-bold text-neutral-800">【導入期】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B0630wHqd" target="_blank" class="text-rose-600 hover:underline font-medium">中国語をひとつひとつわかりやすく。</a></li>
+                    <li><a href="https://link.amazon/B0fYNUqsS" target="_blank" class="text-rose-600 hover:underline font-medium">新ゼロからスタート中国語 文法編</a></li>
+                    <li><a href="https://link.amazon/B0bsamxtU" target="_blank" class="text-rose-600 hover:underline font-medium">英語と一緒に学ぶ中国語</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="font-bold text-neutral-800">【一冊でずっと使える】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B06HrIpLv" target="_blank" class="text-rose-600 hover:underline font-medium">完全マスター中国語の文法</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ③ 読解 -->
+            <div class="space-y-3 pt-3 border-t border-neutral-100">
+              <h5 class="text-sm font-bold text-neutral-900 flex items-center space-x-1.5">
+                <i data-lucide="book" class="w-4 h-4 text-rose-600"></i>
+                <span>③ 読解</span>
+              </h5>
+              <div class="grid gap-3 pl-4 text-xs">
+                <div>
+                  <span class="font-bold text-neutral-800">【初級から上級まで】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://www.thechairmansbao.com" target="_blank" class="text-rose-600 hover:underline font-medium">The Chairman’s Bao</a>（無料の割に相当ハイクオリティで、まずはこれで十分おすすめです）</li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="font-bold text-neutral-800">【ビジネス】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B03bnPOCI" target="_blank" class="text-rose-600 hover:underline font-medium">すぐに使える 実践ビジネス中国語</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ④ Podcast -->
+            <div class="space-y-3 pt-3 border-t border-neutral-100">
+              <h5 class="text-sm font-bold text-neutral-900 flex items-center space-x-1.5">
+                <i data-lucide="headphones" class="w-4 h-4 text-rose-600"></i>
+                <span>④ Podcast</span>
+              </h5>
+              <div class="grid gap-3 pl-4 text-xs">
+                <div class="space-y-1">
+                  <span class="font-bold text-neutral-800">【初級】</span>
+                  <p class="text-neutral-600 leading-relaxed">
+                    <a href="https://chillchat.buzzsprout.com" target="_blank" class="text-rose-600 hover:underline font-bold">Chillchat (Learn Chinese and Chill)</a><br>
+                    英語で中国語の説明をしており、ゼロから学べます！非ネイティブとネイティブの2人組で楽しく聴けます。
+                  </p>
+                </div>
+                <div class="space-y-1">
+                  <span class="font-bold text-neutral-800">【中級】</span>
+                  <p class="text-neutral-600 leading-relaxed">
+                    <a href="https://podcasts.apple.com" target="_blank" class="text-rose-600 hover:underline font-bold">聊聊东西 - Talk to Me in Chinese</a>（Apple Podcasts）<br>
+                    オール中国語ですが、HSK4級くらいから挑戦可能。ネイティブ話者2人による自然なトークです。
+                  </p>
+                </div>
+                <div class="space-y-1">
+                  <span class="font-bold text-neutral-800">【上級】</span>
+                  <p class="text-neutral-600 leading-relaxed">
+                    <a href="https://podcasts.apple.com" target="_blank" class="text-rose-600 hover:underline font-bold">Dashu Mandarin Podcast</a>（Apple Podcasts）<br>
+                    学習者向けの中では最高峰！ネイティブ話者3人＋時々ゲストによる質の高いコンテンツです。
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <!-- Links / Contact -->
