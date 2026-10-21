@@ -55,12 +55,21 @@
     <p>© kodyyork 2026 • Community Chinese Learning Hub</p>
   </footer>
 
-  <!-- Load Lesson Data Scripts (エラーになっても止まらない安全読み込み) -->
+  <!-- Load Lesson Data Scripts (Day 01 - Day 14) -->
   <script src="./data/lessons/day01.js"></script>
   <script src="./data/lessons/day02.js"></script>
   <script src="./data/lessons/day03.js"></script>
   <script src="./data/lessons/day04.js"></script>
   <script src="./data/lessons/day05.js"></script>
+  <script src="./data/lessons/day06.js"></script>
+  <script src="./data/lessons/day07.js"></script>
+  <script src="./data/lessons/day08.js"></script>
+  <script src="./data/lessons/day09.js"></script>
+  <script src="./data/lessons/day10.js"></script>
+  <script src="./data/lessons/day11.js"></script>
+  <script src="./data/lessons/day12.js"></script>
+  <script src="./data/lessons/day13.js"></script>
+  <script src="./data/lessons/day14.js"></script>
 
   <!-- Controller Logic -->
   <script>
@@ -132,21 +141,27 @@
         }
       }
 
-      // 変数が存在するか安全にチェック
-      let data = null;
-      try {
-        if (dayNum === 1 && typeof day01Data !== 'undefined') data = day01Data;
-        if (dayNum === 2 && typeof day02Data !== 'undefined') data = day02Data;
-        if (dayNum === 3 && typeof day03Data !== 'undefined') data = day03Data;
-        if (dayNum === 4 && typeof day04Data !== 'undefined') data = day04Data;
-        if (dayNum === 5 && typeof day05Data !== 'undefined') data = day05Data;
-        if (dayNum === 6 && typeof day06Data !== 'undefined') data = day06Data;
-        if (dayNum === 7 && typeof day07Data !== 'undefined') data = day07Data;
-      } catch (e) {
-        console.log(e);
-      }
+      // Day 01 〜 Day 14 までのデータ変数マッピング
+      const lessonDataMap = {
+        1: typeof day01Data !== 'undefined' ? day01Data : null,
+        2: typeof day02Data !== 'undefined' ? day02Data : null,
+        3: typeof day03Data !== 'undefined' ? day03Data : null,
+        4: typeof day04Data !== 'undefined' ? day04Data : null,
+        5: typeof day05Data !== 'undefined' ? day05Data : null,
+        6: typeof day06Data !== 'undefined' ? day06Data : null,
+        7: typeof day07Data !== 'undefined' ? day07Data : null,
+        8: typeof day08Data !== 'undefined' ? day08Data : null,
+        9: typeof day09Data !== 'undefined' ? day09Data : null,
+        10: typeof day10Data !== 'undefined' ? day10Data : null,
+        11: typeof day11Data !== 'undefined' ? day11Data : null,
+        12: typeof day12Data !== 'undefined' ? day12Data : null,
+        13: typeof day13Data !== 'undefined' ? day13Data : null,
+        14: typeof day14Data !== 'undefined' ? day14Data : null
+      };
 
+      const data = lessonDataMap[dayNum];
       const root = document.getElementById('app-root');
+
       if (data && data.render) {
         root.innerHTML = data.render();
         lucide.createIcons();
@@ -155,8 +170,8 @@
       } else {
         root.innerHTML = `
           <div class="max-w-4xl mx-auto px-4 py-20 text-center">
-            <p class="text-lg font-bold text-neutral-500">Day ${dayNum < 10 ? '0' + dayNum : dayNum} の教材コンテンツは現在準備中です！</p>
-            <p class="text-xs text-neutral-400 mt-2">Week 1 の Day 01 〜 Day 05 をお楽しみください。</p>
+            <p class="text-lg font-bold text-neutral-500">Day ${dayNum < 10 ? '0' + dayNum : dayNum} のファイル（day${dayNum < 10 ? '0' + dayNum : dayNum}.js）がまだ追加されていないか読み込めていません。</p>
+            <p class="text-xs text-neutral-400 mt-2">data/lessons/ ディレクトリ内にファイルが存在するかご確認ください。</p>
           </div>
         `;
       }
