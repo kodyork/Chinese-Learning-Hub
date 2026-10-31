@@ -243,8 +243,150 @@ const day14Data = {
               <span onclick="revealAnswer(10, 'Tài xièxie nǐ le, máfan nǐ le! (太谢谢你了，麻烦你了！)', '太谢谢你了麻烦你了')" id="q10-slot" class="cursor-pointer border-b-2 border-dashed border-rose-500 px-3 py-0.5 text-rose-600 font-bold hover:bg-rose-50 transition">[ クリックして答えを表示 ]</span>
             </div>
           </div>
-
         </section>
+
+
+        <!-- ---------------------------------------------------- -->
+        <!-- 🎵 Section 4: C-POP Special 『芒种』＆表現収集（追加分） -->
+        <!-- ---------------------------------------------------- -->
+        <section class="space-y-6 pt-6 border-t-2 border-neutral-200">
+          <div class="border-b border-neutral-200 pb-3">
+            <div class="inline-block bg-rose-100 text-rose-700 text-xs font-bold px-3 py-1 rounded-full mb-2">
+              Day 14 Special • C-POP & リアル表現収集
+            </div>
+            <h3 class="text-2xl font-bold text-neutral-900">
+              4. 大ヒット曲『芒种』(Mang Zhong) で学ぶ美しい詩的表現
+            </h3>
+            <p class="text-xs sm:text-sm text-neutral-600 mt-1">
+              中華圏で圧倒的な人気を誇るトレンド曲から、独特の情景描写や中国語特有のロマンチックなフレーズを味わいましょう！
+            </p>
+          </div>
+
+          <!-- C-POP 紹介カード -->
+          <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center font-bold shrink-0">
+                <i data-lucide="music" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="text-lg font-bold text-neutral-900">芒种 (Máng zhòng)</h4>
+                <p class="text-xs text-neutral-500">音阙诗听 / 赵方婧 (Yin Que Shi Ting / Zhao Fangjing)</p>
+              </div>
+            </div>
+            <p class="text-xs text-neutral-700 leading-relaxed bg-neutral-50 p-3.5 rounded-xl border border-neutral-100">
+              <strong>【楽曲コラム】</strong><br>
+              二十四節気のひとつ「芒種（稲を植え、実りの種を蒔く時期）」をテーマにした、伝統的な和風・中国風のメロディ（国風音楽）が融合した大ヒット曲。人生の因果や切ない恋心を美しい情景描写とともに歌い上げています。
+            </p>
+          </div>
+
+          <!-- 歌詞フレーズセクション -->
+          <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-6">
+            <div class="flex justify-between items-center border-b border-neutral-200 pb-3">
+              <h4 class="text-md font-bold text-neutral-900 flex items-center space-x-2">
+                <i data-lucide="mic" class="w-4 h-4 text-rose-600"></i>
+                <span>名フレーズを聴いてみよう</span>
+              </h4>
+            </div>
+
+            <!-- 歌詞カード一覧 -->
+            <div class="space-y-4 text-xs sm:text-sm">
+              
+              <!-- Phrase 1 -->
+              <div class="p-4 rounded-xl border border-neutral-100 bg-neutral-50/50 hover-lift transition space-y-1">
+                <div class="flex justify-between items-start">
+                  <span class="font-bold text-lg text-neutral-900">一想到你我就……</span>
+                  <button onclick="speak('一想到你我就')" class="text-rose-600 hover:text-rose-700 p-1 cursor-pointer">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <p class="text-rose-600 pinyin-text font-medium">Yī xiǎngdào nǐ wǒ jiù...</p>
+                <p class="text-neutral-600">あなたのことを考えると、私はすぐに……</p>
+              </div>
+
+              <!-- Phrase 2 (Chorus Sub) -->
+              <div class="p-4 rounded-xl border-2 border-rose-200 bg-rose-50/30 hover-lift transition space-y-1">
+                <div class="flex justify-between items-start">
+                  <span class="font-bold text-lg text-rose-950">一想到你我就 恨情不寿 总于苦海囚</span>
+                  <button onclick="speak('一想到你我就 恨情不寿 总于苦海囚')" class="text-rose-600 hover:text-rose-700 p-1 cursor-pointer">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <p class="text-rose-600 pinyin-text font-medium">Yī xiǎngdào nǐ wǒ jiù, hèn qíng bú shòu, zǒng yú kǔhǎi qiú</p>
+                <p class="text-neutral-700 font-medium">あなたのことを考えると、恋が長続きしないことを恨み、いつも苦しみの海にとらわれてしまう。</p>
+              </div>
+
+              <!-- Phrase 3 -->
+              <div class="p-4 rounded-xl border border-neutral-100 bg-neutral-50/50 hover-lift transition space-y-1">
+                <div class="flex justify-between items-start">
+                  <span class="font-bold text-lg text-neutral-900">种一万朵莲花 在众生中发芽</span>
+                  <button onclick="speak('种一万朵莲花 在众生中发芽')" class="text-rose-600 hover:text-rose-700 p-1 cursor-pointer">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <p class="text-rose-600 pinyin-text font-medium">Zhòng yīwàn duǒ liánhuā, zài zhòngshēng zhōng fāyá</p>
+                <p class="text-neutral-600">一万輪の蓮の花を植え、生きとし生けるものの中で芽吹かせる</p>
+              </div>
+
+              <!-- Phrase 4 -->
+              <div class="p-4 rounded-xl border border-neutral-100 bg-neutral-50/50 hover-lift transition space-y-1">
+                <div class="flex justify-between items-start">
+                  <span class="font-bold text-lg text-neutral-900">放下执着 无相无色</span>
+                  <button onclick="speak('放下执着 无相无色')" class="text-rose-600 hover:text-rose-700 p-1 cursor-pointer">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <p class="text-rose-600 pinyin-text font-medium">Fàngxià zhízhuó, wú xiāng wúsè</p>
+                <p class="text-neutral-600">執着を手放し、形もなく色もない境地へ</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 💡 歌詞からピックアップ！実践で使える文法・表現収集 -->
+          <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-5">
+            <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
+              <i data-lucide="sparkles" class="w-5 h-5 text-rose-600"></i>
+              <h4 class="text-lg font-bold text-neutral-900">歌詞から学べる！重要ワンフレーズ解説</h4>
+            </div>
+
+            <div class="grid gap-4 text-xs sm:text-sm">
+              
+              <div class="p-4 rounded-xl bg-neutral-50 border border-neutral-200/60 space-y-1.5">
+                <div class="flex items-center space-x-2">
+                  <span class="bg-rose-600 text-white font-bold px-2 py-0.5 rounded text-xs">ポイント 1</span>
+                  <span class="font-bold text-neutral-900">連動構文「一……就…… (yī…… jiù……)」</span>
+                </div>
+                <p class="text-neutral-700 leading-relaxed">
+                  <strong>「〜するとすぐに……する」</strong>という、日常会話でも超頻出の定番セットです。<br>
+                  例：<code>一想到你我就……</code>（あなたのことを考えると、すぐに……してしまう）
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-neutral-50 border border-neutral-200/60 space-y-1.5">
+                <div class="flex items-center space-x-2">
+                  <span class="bg-rose-600 text-white font-bold px-2 py-0.5 rounded text-xs">ポイント 2</span>
+                  <span class="font-bold text-neutral-900">動作の完了・持続「种……在…… (zhòng…… zài……)」</span>
+                </div>
+                <p class="text-neutral-700 leading-relaxed">
+                  <strong>「〜を…の中に植える・置く」</strong>という前置詞句を伴う表現です。<br>
+                  例：<code>种一万朵莲花在众生中</code>（生きとし生けるものの中に一万輪の蓮を植える）
+                </p>
+              </div>
+
+              <div class="p-4 rounded-xl bg-neutral-50 border border-neutral-200/60 space-y-1.5">
+                <div class="flex items-center space-x-2">
+                  <span class="bg-rose-600 text-white font-bold px-2 py-0.5 rounded text-xs">ポイント 3</span>
+                  <span class="font-bold text-neutral-900">心理表現・熟語「放下执着 (fàngxià zhízhuó)」</span>
+                </div>
+                <p class="text-neutral-700 leading-relaxed">
+                  <strong>「執着を手放す、こだわりを捨てる」</strong>という意味の、哲学的ながら日常でも比喩として使われる美しい表現です。
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
       </main>
     `;
   }
