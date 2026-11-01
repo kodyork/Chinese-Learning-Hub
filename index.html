@@ -152,6 +152,14 @@
     function switchDay(dayNum) {
       currentActiveDay = dayNum;
 
+      // 選択された Day に連動して、所属する Week を自動計算・セレクトボックスも同期
+      currentActiveWeek = Math.ceil(dayNum / 7);
+      const weekSelect = document.getElementById('week-select');
+      if (weekSelect && parseInt(weekSelect.value) !== currentActiveWeek) {
+        weekSelect.value = currentActiveWeek;
+        renderDayButtons((currentActiveWeek - 1) * 7 + 1);
+      }
+
       // Reset About button style
       const btnAbout = document.getElementById('btn-about');
       if (btnAbout) {
