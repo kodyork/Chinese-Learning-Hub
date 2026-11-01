@@ -69,155 +69,28 @@
     </div>
   </footer>
 
-  <!-- Lesson Data Definitions -->
-  <script>
-    // Day 15 Data
-    const day15Data = {
-      render: function() {
-        return `
-          <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto relative z-10">
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-neutral-100">
-                Day 15: レストランでの注文・味の好み ＆ 能・可以の使い分け
-              </h2>
-            </div>
-          </section>
-          <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
-            <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-              <h3 class="text-xl font-bold text-neutral-900">1. レストラン注文フレーズ</h3>
-              <p class="text-sm text-neutral-700">这个请少放辣，不要香菜。(辛さ控えめ、パクチー抜きで)</p>
-            </div>
-          </main>
-        `;
-      }
-    };
-
-    // Day 16 Data
-    const day16Data = {
-      render: function() {
-        return `
-          <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto relative z-10">
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-neutral-100">
-                Day 16: 買い物・値段交渉 ＆ 比較表現「比」
-              </h2>
-            </div>
-          </section>
-          <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
-            <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-              <h3 class="text-xl font-bold text-neutral-900">1. 値段交渉フレーズ</h3>
-              <p class="text-sm text-neutral-700">太贵了！能不能便宜一点儿？(高すぎます！安くできますか？)</p>
-            </div>
-          </main>
-        `;
-      }
-    };
-
-    // Day 17 Data
-    const day17Data = {
-      render: function() {
-        return `
-          <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto relative z-10">
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-neutral-100">
-                Day 17: 道案内・タクシー移動 ＆ 進行中の動作「在」
-              </h2>
-            </div>
-          </section>
-          <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
-            <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-              <h3 class="text-xl font-bold text-neutral-900">1. タクシー会話</h3>
-              <p class="text-sm text-neutral-700">师傅，到北京站要多久？(運転手さん、北京駅までどのくらい？)</p>
-            </div>
-          </main>
-        `;
-      }
-    };
-
-    // Day 18 Data
-    const day18Data = {
-      render: function() {
-        return `
-          <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto relative z-10">
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-neutral-100">
-                Day 18: 感情・気持ちの表現 ＆ 觉得 / 有点儿 / 状態補語「得」
-              </h2>
-            </div>
-          </section>
-          <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
-            <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-              <h3 class="text-xl font-bold text-neutral-900">1. 気持ち表現</h3>
-              <p class="text-sm text-neutral-700">我觉得有点儿累。(少し疲れていると感じます)</p>
-            </div>
-          </main>
-        `;
-      }
-    };
-
-    // Day 19 Data
-    const day19Data = {
-      render: function() {
-        return `
-          <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto relative z-10">
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-neutral-100">
-                Day 19: 過去の経験と変化 ＆ アスペクト助詞「过」「了」
-              </h2>
-            </div>
-          </section>
-          <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
-            <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-              <h3 class="text-xl font-bold text-neutral-900">1. 経験表現</h3>
-              <p class="text-sm text-neutral-700">你去过中国吗？(中国に行ったことがありますか？)</p>
-            </div>
-          </main>
-        `;
-      }
-    };
-
-    // Day 20 Data
-    const day20Data = {
-      render: function() {
-        return `
-          <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto relative z-10">
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-neutral-100">
-                Day 20: 仮定・相談 ＆ 如果…就… / 最好 / 可不可以
-              </h2>
-            </div>
-          </section>
-          <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
-            <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-              <h3 class="text-xl font-bold text-neutral-900">1. 仮定表現</h3>
-              <p class="text-sm text-neutral-700">如果有不懂的地方，你可以问我。(わからない点があれば聞いてもいいですよ)</p>
-            </div>
-          </main>
-        `;
-      }
-    };
-
-    // Day 21 Data
-    const day21Data = {
-      render: function() {
-        return `
-          <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
-            <div class="max-w-4xl mx-auto relative z-10">
-              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-neutral-100">
-                Day 21: Week 3 総合復習 ＆ 21日完走記念テスト
-              </h2>
-            </div>
-          </section>
-          <main class="max-w-4xl mx-auto px-4 py-10 space-y-12">
-            <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-              <h3 class="text-xl font-bold text-neutral-900">1. 完走おめでとうございます！</h3>
-              <p class="text-sm text-neutral-700">全21日間のカリキュラムを無事に修了しました。</p>
-            </div>
-          </main>
-        `;
-      }
-    };
-  </script>
+  <!-- Load Lesson Data Scripts (Day 01 - Day 21) -->
+  <script src="./data/lessons/day01.js"></script>
+  <script src="./data/lessons/day02.js"></script>
+  <script src="./data/lessons/day03.js"></script>
+  <script src="./data/lessons/day04.js"></script>
+  <script src="./data/lessons/day05.js"></script>
+  <script src="./data/lessons/day06.js"></script>
+  <script src="./data/lessons/day07.js"></script>
+  <script src="./data/lessons/day08.js"></script>
+  <script src="./data/lessons/day09.js"></script>
+  <script src="./data/lessons/day10.js"></script>
+  <script src="./data/lessons/day11.js"></script>
+  <script src="./data/lessons/day12.js"></script>
+  <script src="./data/lessons/day13.js"></script>
+  <script src="./data/lessons/day14.js"></script>
+  <script src="./data/lessons/day15.js"></script>
+  <script src="./data/lessons/day16.js"></script>
+  <script src="./data/lessons/day17.js"></script>
+  <script src="./data/lessons/day18.js"></script>
+  <script src="./data/lessons/day19.js"></script>
+  <script src="./data/lessons/day20.js"></script>
+  <script src="./data/lessons/day21.js"></script>
 
   <!-- Controller Logic -->
   <script>
@@ -249,6 +122,17 @@
 
     function setSpeed(speed) {
       currentSpeed = speed;
+      const btn075 = document.getElementById('speed-075');
+      const btn100 = document.getElementById('speed-100');
+
+      if (btn075 && btn100) {
+        btn075.className = speed === 0.75
+          ? "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-900 bg-neutral-900 text-white font-medium transition cursor-pointer"
+          : "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-neutral-900 font-medium transition cursor-pointer";
+        btn100.className = speed === 1.0
+          ? "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-900 bg-neutral-900 text-white font-medium transition cursor-pointer"
+          : "px-3.5 py-1.5 text-xs rounded-lg border border-neutral-200 bg-neutral-50 text-neutral-700 hover:border-neutral-900 font-medium transition cursor-pointer";
+      }
     }
 
     function speak(text) {
@@ -260,17 +144,21 @@
           utterance.rate = parseFloat(currentSpeed);
           window.speechSynthesis.speak(utterance);
         }, 50);
+      } else {
+        alert("お使いのブラウザは音声再生に対応していません。");
       }
     }
 
     function switchDay(dayNum) {
       currentActiveDay = dayNum;
 
+      // Reset About button style
       const btnAbout = document.getElementById('btn-about');
       if (btnAbout) {
         btnAbout.className = "px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5";
       }
 
+      // Highlight active day button
       const startDay = (currentActiveWeek - 1) * 7 + 1;
       for (let i = startDay; i < startDay + 7; i++) {
         const btn = document.getElementById(`btn-day${i}`);
@@ -282,20 +170,20 @@
       }
 
       const lessonDataMap = {
-        1: { render: () => `<div class='p-10 text-center font-bold'>Day 01 準備中</div>` },
-        2: { render: () => `<div class='p-10 text-center font-bold'>Day 02 準備中</div>` },
-        3: { render: () => `<div class='p-10 text-center font-bold'>Day 03 準備中</div>` },
-        4: { render: () => `<div class='p-10 text-center font-bold'>Day 04 準備中</div>` },
-        5: { render: () => `<div class='p-10 text-center font-bold'>Day 05 準備中</div>` },
-        6: { render: () => `<div class='p-10 text-center font-bold'>Day 06 準備中</div>` },
-        7: { render: () => `<div class='p-10 text-center font-bold'>Day 07 準備中</div>` },
-        8: { render: () => `<div class='p-10 text-center font-bold'>Day 08 準備中</div>` },
-        9: { render: () => `<div class='p-10 text-center font-bold'>Day 09 準備中</div>` },
-        10: { render: () => `<div class='p-10 text-center font-bold'>Day 10 準備中</div>` },
-        11: { render: () => `<div class='p-10 text-center font-bold'>Day 11 準備中</div>` },
-        12: { render: () => `<div class='p-10 text-center font-bold'>Day 12 準備中</div>` },
-        13: { render: () => `<div class='p-10 text-center font-bold'>Day 13 準備中</div>` },
-        14: { render: () => `<div class='p-10 text-center font-bold'>Day 14 準備中</div>` },
+        1: typeof day01Data !== 'undefined' ? day01Data : null,
+        2: typeof day02Data !== 'undefined' ? day02Data : null,
+        3: typeof day03Data !== 'undefined' ? day03Data : null,
+        4: typeof day04Data !== 'undefined' ? day04Data : null,
+        5: typeof day05Data !== 'undefined' ? day05Data : null,
+        6: typeof day06Data !== 'undefined' ? day06Data : null,
+        7: typeof day07Data !== 'undefined' ? day07Data : null,
+        8: typeof day08Data !== 'undefined' ? day08Data : null,
+        9: typeof day09Data !== 'undefined' ? day09Data : null,
+        10: typeof day10Data !== 'undefined' ? day10Data : null,
+        11: typeof day11Data !== 'undefined' ? day11Data : null,
+        12: typeof day12Data !== 'undefined' ? day12Data : null,
+        13: typeof day13Data !== 'undefined' ? day13Data : null,
+        14: typeof day14Data !== 'undefined' ? day14Data : null,
         15: typeof day15Data !== 'undefined' ? day15Data : null,
         16: typeof day16Data !== 'undefined' ? day16Data : null,
         17: typeof day17Data !== 'undefined' ? day17Data : null,
@@ -311,15 +199,255 @@
       if (data && data.render) {
         root.innerHTML = data.render();
         lucide.createIcons();
+        setSpeed(currentSpeed);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else {
-        root.innerHTML = `<div class="max-w-4xl mx-auto px-4 py-20 text-center font-bold text-neutral-500">データが見つかりません。</div>`;
+        const dayStr = dayNum < 10 ? `0${dayNum}` : `${dayNum}`;
+        root.innerHTML = `
+          <div class="max-w-4xl mx-auto px-4 py-20 text-center">
+            <p class="text-lg font-bold text-neutral-500">Day ${dayStr} のファイル（day${dayStr}.js）がまだ追加されていないか読み込めません。</p>
+            <p class="text-xs text-neutral-400 mt-2">data/lessons/ ディレクトリ内に該当ファイルが存在するかご確認ください。</p>
+          </div>
+        `;
       }
     }
 
     function showAboutPage() {
+      const btnAbout = document.getElementById('btn-about');
+      if (btnAbout) {
+        btnAbout.className = "px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-rose-500 bg-rose-600 text-white shadow-sm flex items-center space-x-1.5";
+      }
+
+      const startDay = (currentActiveWeek - 1) * 7 + 1;
+      for (let i = startDay; i < startDay + 7; i++) {
+        const btn = document.getElementById(`btn-day${i}`);
+        if (btn) {
+          btn.className = "px-2.5 py-1.5 rounded-lg text-xs font-bold transition cursor-pointer shrink-0 text-neutral-400 hover:text-white";
+        }
+      }
+
       const root = document.getElementById('app-root');
-      root.innerHTML = `<div class="max-w-4xl mx-auto px-4 py-20 text-center font-bold">About Page</div>`;
+      root.innerHTML = `
+        <section class="bg-neutral-950 text-white py-12 px-4 border-b border-neutral-800 relative overflow-hidden">
+          <div class="absolute -top-24 -right-24 w-96 h-96 bg-rose-950/30 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-flex items-center space-x-2 text-rose-400 text-xs font-semibold tracking-wider uppercase mb-3 bg-rose-950/50 px-3 py-1 rounded-full border border-rose-900/50">
+              <i data-lucide="user-check" class="w-3.5 h-3.5"></i>
+              <span>Administrator Profile</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-neutral-100">
+              ウェブサイト管理人について
+            </h2>
+          </div>
+        </section>
+
+        <main class="max-w-4xl mx-auto px-4 py-12 space-y-10">
+          <!-- Profile Card -->
+          <div class="bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="shrink-0 text-center">
+              <div class="w-32 h-32 sm:w-40 sm:h-40 rounded-full bg-neutral-100 border-4 border-rose-100 overflow-hidden shadow-inner flex items-center justify-center mx-auto relative">
+                <img src="Grad ID Photo" alt="kodyork" class="w-full h-full object-cover">
+              </div>
+              <span class="inline-block mt-3 px-3 py-1 bg-rose-50 text-rose-700 text-xs font-bold rounded-full border border-rose-200">
+                kodyork
+              </span>
+            </div>
+
+            <div class="space-y-4 flex-1 text-center md:text-left">
+              <div>
+                <h3 class="text-2xl font-bold text-neutral-900">kodyork</h3>
+                <p class="text-xs text-rose-600 font-semibold tracking-wide uppercase mt-0.5">Creator & Language Enthusiast</p>
+              </div>
+
+              <p class="text-sm text-neutral-700 leading-relaxed">
+                こんにちは！kodyorkと申します。23年9月から25年7月まで、北京で学位留学をしていました。<br>
+                その時の経験をぼちぼちと還元するために、このプラットフォームを運営しています〜 実践で使いやすい中国語フレーズを楽しく学べるような場所になればと思っています！
+              </p>
+
+              <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-3 text-xs">
+                <div class="flex items-center space-x-1.5 text-neutral-600 bg-neutral-100 px-3 py-1.5 rounded-lg">
+                  <i data-lucide="map-pin" class="w-3.5 h-3.5 text-rose-600"></i>
+                  <span>Tokyo / Beijing</span>
+                </div>
+                <div class="flex items-center space-x-1.5 text-neutral-600 bg-neutral-100 px-3 py-1.5 rounded-lg">
+                  <i data-lucide="languages" class="w-3.5 h-3.5 text-rose-600"></i>
+                  <span>Japanese / Chinese</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recommended Materials Card -->
+          <div class="bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+            <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
+              <i data-lucide="book-open" class="w-5 h-5 text-rose-600"></i>
+              <h4 class="text-lg font-bold text-neutral-900">おすすめ中国語教材・リソース</h4>
+            </div>
+            
+            <p class="text-xs text-neutral-600 leading-relaxed">
+              学習を進める上で非常に役立つ、おすすめの単語帳、文法書、読解サイト、ポッドキャストを厳選してご紹介します。
+            </p>
+
+            <!-- ① 単語 -->
+            <div class="space-y-3 pt-2">
+              <h5 class="text-sm font-bold text-neutral-900 flex items-center space-x-1.5">
+                <i data-lucide="bookmark" class="w-4 h-4 text-rose-600"></i>
+                <span>① 単語</span>
+              </h5>
+              <div class="grid gap-3 pl-4 text-xs">
+                <div>
+                  <span class="font-bold text-neutral-800">【導入期】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B0a1N1mZd" target="_blank" class="text-rose-600 hover:underline font-medium">新ゼロからスタート中国語単語BASIC1000</a></li>
+                    <li><a href="https://link.amazon/B09djPVGe" target="_blank" class="text-rose-600 hover:underline font-medium">合格奪取! 新HSK1~4級 単語トレーニングブック</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="font-bold text-neutral-800">【洋書】（国外でかなり有名）</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B05igNkSA" target="_blank" class="text-rose-600 hover:underline font-medium">2000 Most Common Chinese Words in Context: Get Fluent & Increase Your Chinese Vocabulary with 2000 Chinese Phrases</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ② 文法 -->
+            <div class="space-y-3 pt-3 border-t border-neutral-100">
+              <h5 class="text-sm font-bold text-neutral-900 flex items-center space-x-1.5">
+                <i data-lucide="file-text" class="w-4 h-4 text-rose-600"></i>
+                <span>② 文法</span>
+              </h5>
+              <div class="grid gap-3 pl-4 text-xs">
+                <div>
+                  <span class="font-bold text-neutral-800">【導入期】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B0630wHqd" target="_blank" class="text-rose-600 hover:underline font-medium">中国語をひとつひとつわかりやすく。</a></li>
+                    <li><a href="https://link.amazon/B0fYNUqsS" target="_blank" class="text-rose-600 hover:underline font-medium">新ゼロからスタート中国語 文法編</a></li>
+                    <li><a href="https://link.amazon/B0bsamxtU" target="_blank" class="text-rose-600 hover:underline font-medium">英語と一緒に学ぶ中国語</a></li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="font-bold text-neutral-800">【一冊でずっと使える】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B06HrIpLv" target="_blank" class="text-rose-600 hover:underline font-medium">完全マスター中国語の文法</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ③ 読解 -->
+            <div class="space-y-3 pt-3 border-t border-neutral-100">
+              <h5 class="text-sm font-bold text-neutral-900 flex items-center space-x-1.5">
+                <i data-lucide="book" class="w-4 h-4 text-rose-600"></i>
+                <span>③ 読解</span>
+              </h5>
+              <div class="grid gap-3 pl-4 text-xs">
+                <div>
+                  <span class="font-bold text-neutral-800">【初級から上級まで】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://www.thechairmansbao.com" target="_blank" class="text-rose-600 hover:underline font-medium">The Chairman’s Bao</a>（無料の割に相当ハイクオリティで、まずはこれで十分おすすめです）</li>
+                  </ul>
+                </div>
+                <div>
+                  <span class="font-bold text-neutral-800">【ビジネス】</span>
+                  <ul class="list-disc list-inside space-y-1.5 mt-1 text-neutral-600">
+                    <li><a href="https://link.amazon/B03bnPOCI" target="_blank" class="text-rose-600 hover:underline font-medium">すぐに使える 実践ビジネス中国語</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ④ Podcast -->
+            <div class="space-y-3 pt-3 border-t border-neutral-100">
+              <h5 class="text-sm font-bold text-neutral-900 flex items-center space-x-1.5">
+                <i data-lucide="headphones" class="w-4 h-4 text-rose-600"></i>
+                <span>④ Podcast</span>
+              </h5>
+              <div class="grid gap-3 pl-4 text-xs">
+                <div class="space-y-1">
+                  <span class="font-bold text-neutral-800">【初級】</span>
+                  <p class="text-neutral-600 leading-relaxed">
+                    <a href="https://chillchat.buzzsprout.com" target="_blank" class="text-rose-600 hover:underline font-bold">Chillchat (Learn Chinese and Chill)</a><br>
+                    英語で中国語の説明をしており、ゼロから学べます！非ネイティブとネイティブの2人組で楽しく聴けます。
+                  </p>
+                </div>
+                <div class="space-y-1">
+                  <span class="font-bold text-neutral-800">【中級】</span>
+                  <p class="text-neutral-600 leading-relaxed">
+                    <a href="https://podcasts.apple.com" target="_blank" class="text-rose-600 hover:underline font-bold">聊聊东西 - Talk to Me in Chinese</a>（Apple Podcasts）<br>
+                    オール中国語ですが、HSK4級くらいから挑戦可能。ネイティブ話者2人による自然なトークです。
+                  </p>
+                </div>
+                <div class="space-y-1">
+                  <span class="font-bold text-neutral-800">【上級】</span>
+                  <p class="text-neutral-600 leading-relaxed">
+                    <a href="https://podcasts.apple.com" target="_blank" class="text-rose-600 hover:underline font-bold">Dashu Mandarin Podcast</a>（Apple Podcasts）<br>
+                    学習者向けの中では最高峰！ネイティブ話者3人＋時々ゲストによる質の高いコンテンツです。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Links / Contact -->
+          <div class="bg-white border border-neutral-200/80 rounded-2xl p-6 sm:p-8 shadow-sm space-y-4">
+            <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
+              <i data-lucide="link" class="w-5 h-5 text-rose-600"></i>
+              <h4 class="text-lg font-bold text-neutral-900">リンク・お問い合わせ</h4>
+            </div>
+            
+            <p class="text-xs text-neutral-600">
+              ご質問やフィードバックなどがございましたら、以下のリンクよりお気軽にご連絡ください。
+            </p>
+
+            <div class="flex flex-wrap gap-3 pt-2">
+              <a href="https://github.com/kodyork" target="_blank" class="inline-flex items-center space-x-2 bg-neutral-900 text-white px-4 py-2 rounded-xl text-xs font-medium hover:bg-neutral-800 transition">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>GitHub Profile</span>
+              </a>
+            </div>
+          </div>
+        </main>
+      `;
+
+      lucide.createIcons();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function checkQuiz(qNum, optIdx, correctIdx, correctMsg, wrongMsg, speakText) {
+      const fb = document.getElementById(`q${qNum}-feedback`);
+      fb.classList.remove('hidden', 'bg-neutral-900', 'text-white', 'bg-neutral-100', 'text-neutral-800');
+
+      if (optIdx === correctIdx) {
+        fb.classList.add('bg-neutral-900', 'text-white');
+        fb.innerHTML = `✓ ${correctMsg}`;
+        if (speakText) speak(speakText);
+      } else {
+        fb.classList.add('bg-neutral-100', 'text-neutral-800');
+        fb.innerHTML = `✕ ${wrongMsg}`;
+      }
+    }
+
+    function revealAnswer(qNum, answerText, speakText) {
+      const slot = document.getElementById(`q${qNum}-slot`);
+      slot.innerHTML = `<span class="text-rose-600 font-bold border-b-2 border-rose-600 px-1.5 py-0.5 animate-pulse">${answerText}</span>`;
+      if (speakText) speak(speakText);
+    }
+
+    function checkInput(qNum, correctAnswers, speakText) {
+      const val = document.getElementById(`q${qNum}-input`).value.trim();
+      const fb = document.getElementById(`q${qNum}-feedback`);
+      fb.classList.remove('hidden', 'bg-neutral-900', 'text-white', 'bg-neutral-100', 'text-neutral-800');
+
+      if (correctAnswers.includes(val)) {
+        fb.classList.add('bg-neutral-900', 'text-white');
+        fb.innerHTML = '✓ 正解です！';
+        if (speakText) speak(speakText);
+      } else {
+        fb.classList.add('bg-neutral-100', 'text-neutral-800');
+        fb.innerHTML = `✕ 残念！ 正解は 「${correctAnswers[0]}」 です。`;
+      }
     }
 
     window.addEventListener('DOMContentLoaded', () => {
