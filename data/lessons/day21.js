@@ -17,7 +17,7 @@ const day21Data = {
             <div>
               <strong class="text-rose-300 font-semibold">Grand Milestone:</strong>
               <span class="ml-1 text-neutral-300">
-                Congratulations on reaching Day 21! You have completed the 3-week course covering foundational to intermediate (A1-B2) practical Chinese.
+                Congratulations on reaching Day 21! You have completed the 3-week course covering foundational practical Chinese.
               </span>
             </div>
           </div>
