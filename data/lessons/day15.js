@@ -50,16 +50,16 @@ const day15Data = {
             <div class="space-y-2 border-l-2 border-rose-500 pl-4">
               <h4 class="font-bold text-neutral-900 text-base">① 「〜できますか？」：能（néng） vs 可以（kěyǐ）</h4>
               <p class="text-neutral-600">
-                ・<strong>能 (néng):</strong> 条件・能力的に可能か（例：<code>能不能少放辣？</code>＝辛さを控えめにできる？）<br>
-                ・<strong>可以 (kěyǐ):</strong> 許可・OKかどうか（例：<code>可以用微信支付吗？</code>＝WeChat Payは使えますか？）
+                ・<strong>能 (néng):</strong> 条件・能力的に可能か（例：能不能少放辣？＝辛さを控えめにできる？）<br>
+                ・<strong>可以 (kěyǐ):</strong> 許可・OKかどうか（例：可以用微信支付吗？＝WeChat Payは使えますか？）
               </p>
             </div>
 
             <div class="space-y-2 border-l-2 border-neutral-900 pl-4">
               <h4 class="font-bold text-neutral-900 text-base">② 料理の注文と量詞</h4>
               <p class="text-neutral-600">
-                ・<strong>份 (fèn):</strong> 〜人前、〜セット（例：<code>一份宫保鸡丁</code>＝クンポーチキンの1人前）<br>
-                ・<strong>杯 (bēi):</strong> コップ・グラス（例：<code>一杯冰水</code>＝氷水1杯）
+                ・<strong>份 (fèn):</strong> 〜人前、〜セット（例：一份宫保鸡丁＝クンポーチキンの1人前）<br>
+                ・<strong>杯 (bēi):</strong> コップ・グラス（例：一杯冰水＝氷水1杯）
               </p>
             </div>
 
@@ -254,7 +254,7 @@ const day15Data = {
                   <span class="font-bold text-neutral-900">形容詞の重複「简简单单 (jiǎn jiǎn dān dān)」</span>
                 </div>
                 <p class="text-neutral-700 leading-relaxed">
-                  「简单（シンプル）」を `AABB` 型に重ねることで、<strong>「気取らず、ごくごくシンプルに」</strong>というニュアンスや親しみが強調されます。
+                  「简单（シンプル）」を <code class="bg-neutral-200 px-1 rounded">AABB</code> 型に重ねることで、<strong>「気取らず、ごくごくシンプルに」</strong>というニュアンスや親しみが強調されます。
                 </p>
               </div>
 
@@ -264,7 +264,7 @@ const day15Data = {
                   <span class="font-bold text-neutral-900">動作の持続「着 (zhe)」</span>
                 </div>
                 <p class="text-neutral-700 leading-relaxed">
-                  <code>牵着你的手</code>＝「手を繋いだままでいる」。動詞＋`着` で動作や状態が継続していることを表します。
+                  <code class="bg-neutral-200 px-1 rounded">牵着你的手</code>＝「手を繋いだままでいる」。動詞＋<code class="bg-neutral-200 px-1 rounded">着</code> で動作や状態が継続していることを表します。
                 </p>
               </div>
             </div>
