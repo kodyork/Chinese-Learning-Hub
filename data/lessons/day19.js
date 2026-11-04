@@ -1,4 +1,4 @@
-const day20Data = {
+const day19Data = {
   render: function() {
     return `
       <!-- Hero Section -->
@@ -7,17 +7,17 @@ const day20Data = {
         <div class="max-w-4xl mx-auto relative z-10">
           <div class="inline-flex items-center space-x-2 text-rose-400 text-xs font-semibold tracking-wider uppercase mb-3 bg-rose-950/50 px-3 py-1 rounded-full border border-rose-900/50">
             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-            <span>Day 20 Advanced Masterclass</span>
+            <span>Day 19 Advanced Masterclass</span>
           </div>
           <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4 text-neutral-100">
-            Day 20: 方向補語の派生・抽象的用法 ＆ 王力宏『唯一』に学ぶ感情の芽生え
+            Day 19: 条件複文の極意（只要…就… / 只有…才…） ＆ C-POPに学ぶ運命のフレーズ
           </h2>
           <div class="bg-neutral-900/90 border border-neutral-800 rounded-xl p-4 flex items-start space-x-3 text-xs text-neutral-300 backdrop-blur-sm">
             <i data-lucide="globe" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
             <div>
               <strong class="text-rose-300 font-semibold">B1-B2 Bridge & Nuances:</strong>
               <span class="ml-1 text-neutral-300">
-                物理的な方向（出来てくる/出していく）から「動作の開始（起来）」「継続（下去）」「記憶の喚起（想起来）」への抽象的派生パターンをマスターします。
+                十分条件（〜しさえすれば）と必要条件（〜してこそ初めて）のニュアンスの違いを整理し、C-POP歌詞に頻出する強い決意と運命の表現をマスターします。
               </span>
             </div>
           </div>
@@ -43,33 +43,32 @@ const day20Data = {
         <section class="space-y-6">
           <div class="flex items-center space-x-2 border-b border-neutral-200 pb-3">
             <i data-lucide="book-open" class="w-5 h-5 text-rose-600"></i>
-            <h3 class="text-xl font-bold text-neutral-900">1. 深掘り解説：方向補語の代表的な抽象的・派生用法</h3>
+            <h3 class="text-xl font-bold text-neutral-900">1. 深掘り解説：十分条件と必要条件の接続詞構文</h3>
           </div>
 
           <div class="bg-white border border-neutral-200/80 rounded-xl p-6 sm:p-8 shadow-sm space-y-6 text-sm leading-relaxed text-neutral-800">
             <div class="space-y-2 border-l-2 border-rose-500 pl-4">
-              <h4 class="font-bold text-neutral-900 text-base">① 动作的开始与集中：起来 (qǐlái)</h4>
+              <h4 class="font-bold text-neutral-900 text-base">① 「只要…就…（〜しさえすれば、…だ）」による十分条件</h4>
               <p class="text-neutral-600">
-                ・<strong>動作・状態の開始：</strong><code class="bg-neutral-100 px-1 rounded">笑起来</code>（笑い始める）、<code class="bg-neutral-100 px-1 rounded">热起来</code>（暑くなり始める）<br>
-                ・<strong>記憶・意識の回収：</strong><code class="bg-neutral-100 px-1 rounded">想起来</code>（思い出す）<br>
-                例：<code class="bg-neutral-100 px-1 rounded">我想起来了他的名字。</code>（彼の名前を思い出しました）
+                最低限の条件を満たせば簡単に結果が得られることを示します。<br>
+                ・<code class="bg-neutral-100 px-1 rounded">只要坚持，就一定能成功。</code>（続けさえすれば、必ず成功できる）<br>
+                ※後句では副詞 <code class="bg-neutral-100 px-1 rounded">就</code> とセットで呼応します。
               </p>
             </div>
 
             <div class="space-y-2 border-l-2 border-neutral-900 pl-4">
-              <h4 class="font-bold text-neutral-900 text-base">② B2応用：动作的持续（下去）与 显露（出来）</h4>
+              <h4 class="font-bold text-neutral-900 text-base">② B2応用：「只有…才…（〜してこそ初めて、…できる）」による唯一の必要条件</h4>
               <p class="text-neutral-600">
-                ・<strong>下去（〜し続ける）：</strong>現在から未来へと動作を継続する。<br>
-                 例：<code class="bg-neutral-100 px-1 rounded">请继续说下去。</code>（どうぞそのまま話し続けてください）<br>
-                ・<strong>出来（〜し出でる・判明する）：</strong>隠れていたものが表に現れる・認識できるようになる。<br>
-                 例：<code class="bg-neutral-100 px-1 rounded">我听出来这是谁的声音了。</code>（聞き分けて誰の声か分かりました）
+                唯一不可欠な条件を提示し、それ以外の方法では不可能であることを強調します。<br>
+                ・<code class="bg-neutral-100 px-1 rounded">只有多听多说，才能学好中文。</code>（たくさん聞き、たくさん話してこそ初めて、中国語をマスターできる）<br>
+                ※後句では副詞 <code class="bg-neutral-100 px-1 rounded">才</code> とセットで呼応します。
               </p>
             </div>
 
             <div class="space-y-2 border-l-2 border-rose-600 pl-4">
-              <h4 class="font-bold text-neutral-900 text-base">💡 豆知識：C-POP歌詞での方向補語と情緒表現</h4>
+              <h4 class="font-bold text-neutral-900 text-base">💡 豆知識：C-POP歌詞における条件文のドラマ性</h4>
               <p class="text-neutral-600">
-                「愛し始める（爱起来）」「思い出してしまう（想起来）」「歌い続けていく（唱下去）」など、方向補語の派生用法は感情の動きや時間の流れをドラマチックに描写するためにC-POPのサビで極めて頻繁に使われます。
+                「君さえいれば（只要有你）…」「すれ違って初めて気づいた（只有…才…）」といった条件構文は、ラブソングや壮大な叙事詩的楽曲において、運命の重みやかけがえのなさを表現するために多用されるキー表現です。
               </p>
             </div>
           </div>
@@ -83,27 +82,27 @@ const day20Data = {
           </div>
           <div class="bg-white border border-neutral-200/80 rounded-xl overflow-hidden shadow-sm divide-y divide-neutral-100">
             
-            <div onclick="speak('我想起来了，我们以前在上海见过面！')" class="p-5 hover:bg-rose-50/30 transition cursor-pointer flex items-start space-x-4">
+            <div onclick="speak('只要有信心，什么困难都能克服。')" class="p-5 hover:bg-rose-50/30 transition cursor-pointer flex items-start space-x-4">
               <div class="mt-1 bg-neutral-100 text-neutral-800 p-2.5 rounded-full shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></div>
               <div>
-                <span class="font-bold text-lg text-neutral-900 block">我想起来了，我们以前在上海见过面！</span>
-                <p class="text-xs text-neutral-500 mt-1">思い出しました、私たち以前上海でお会いしたことがありますね！（想起来 ＝ 思い出す）</p>
+                <span class="font-bold text-lg text-neutral-900 block">只要有信心，什么困难都能克服。</span>
+                <p class="text-xs text-neutral-500 mt-1">自信さえあれば、どんな困難も乗り越えられる。</p>
               </div>
             </div>
 
-            <div onclick="speak('听到这个好消息，大家都高兴地笑了起来。')" class="p-5 hover:bg-rose-50/30 transition cursor-pointer flex items-start space-x-4">
+            <div onclick="speak('只有互相理解，才能成为真正的朋友。')" class="p-5 hover:bg-rose-50/30 transition cursor-pointer flex items-start space-x-4">
               <div class="mt-1 bg-neutral-100 text-neutral-800 p-2.5 rounded-full shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></div>
               <div>
-                <span class="font-bold text-lg text-neutral-900 block">听到这个好消息，大家都高兴地笑了起来。</span>
-                <p class="text-xs text-neutral-500 mt-1">この良い知らせを聞いて、みんな嬉しそうに笑い始めました。（笑了起来 ＝ 笑い始める）</p>
+                <span class="font-bold text-lg text-neutral-900 block">只有互相理解，才能成为真正的朋友。</span>
+                <p class="text-xs text-neutral-500 mt-1">互いに理解し合ってこそ初めて、本当の友達になれる。</p>
               </div>
             </div>
 
-            <div onclick="speak('不管遇到什么困难，我都会坚持学下去。')" class="p-5 hover:bg-rose-50/30 transition cursor-pointer flex items-start space-x-4">
+            <div onclick="speak('只要你愿意，我们随时都可以出发。')" class="p-5 hover:bg-rose-50/30 transition cursor-pointer flex items-start space-x-4">
               <div class="mt-1 bg-neutral-100 text-neutral-800 p-2.5 rounded-full shrink-0"><i data-lucide="volume-2" class="w-4 h-4"></i></div>
               <div>
-                <span class="font-bold text-lg text-neutral-900 block">不管遇到什么困难，我都会坚持学下去。</span>
-                <p class="text-xs text-neutral-500 mt-1">どんな困難に遭おうとも、私は勉強し続けていきます。（学下去 ＝ 学び続ける）</p>
+                <span class="font-bold text-lg text-neutral-900 block">只要你愿意，我们随时都可以出发。</span>
+                <p class="text-xs text-neutral-500 mt-1">君さえよければ、僕たちはいつでも出発できるよ。</p>
               </div>
             </div>
 
@@ -115,51 +114,51 @@ const day20Data = {
           <div class="flex items-center justify-between border-b border-neutral-200 pb-3">
             <div class="flex items-center space-x-2">
               <i data-lucide="check-circle-2" class="w-5 h-5 text-rose-600"></i>
-              <h3 class="text-xl font-bold text-neutral-900">3. Day 20 実践クイズ（全5問）</h3>
+              <h3 class="text-xl font-bold text-neutral-900">3. Day 19 実践クイズ（全5問）</h3>
             </div>
             <span class="text-xs text-rose-600 font-semibold bg-rose-50 px-2.5 py-1 rounded-full border border-rose-200">5 Questions</span>
           </div>
 
           <!-- Q1 -->
           <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-            <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q1. 選択問題：思い出す</span>
-            <p class="font-medium text-neutral-900">「忘れていたことを思い出す」を表す正しい補語表現は？</p>
+            <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q1. 選択問題：〜しさえすれば</span>
+            <p class="font-medium text-neutral-900">「〜しさえすれば、…だ」を表す十分条件の接続詞ペアは？</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <button onclick="checkQuiz(1, 0, 0, '太棒了！ 想起来 が「思い出す」です。', '不正解！ 想出来 は「新しいアイデアを思いつく」です。', '想起来')" class="hover-lift border border-neutral-200 rounded-xl p-4 text-left bg-white font-medium text-sm">A. 想起来</button>
-              <button onclick="checkQuiz(1, 1, 0, '太棒了！ 想起来 が「思い出す」です。', '不正解！ 想出来 は「新しいアイデアを思いつく」です。', '想起来')" class="hover-lift border border-neutral-200 rounded-xl p-4 text-left bg-white font-medium text-sm">B. 想出来</button>
+              <button onclick="checkQuiz(1, 0, 0, '太棒了！ 只要…就… が十分条件を表します。', '不正解！ 只有…才… は唯一の必要条件です。', '只要…就…')" class="hover-lift border border-neutral-200 rounded-xl p-4 text-left bg-white font-medium text-sm">A. 只要…就…</button>
+              <button onclick="checkQuiz(1, 1, 0, '太棒了！ 只要…就… が十分条件を表します。', '不正解！ 只有…才… は唯一の必要条件です。', '只要…就…')" class="hover-lift border border-neutral-200 rounded-xl p-4 text-left bg-white font-medium text-sm">B. 只有…才…</button>
             </div>
             <div id="q1-feedback" class="hidden text-sm p-4 rounded-xl"></div>
           </div>
 
           <!-- Q2 -->
           <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-            <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q2. 穴埋め問題：継続の表現</span>
-            <p class="font-medium text-neutral-900">「やり続けていく（做[ ]去）」の空欄に入る方向補語は？（タップで表示）</p>
+            <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q2. 穴埋め問題：必要条件</span>
+            <p class="font-medium text-neutral-900">「〜して初めて、…できる（只有…[ ]能…）」の空欄に入る副詞は？（タップで表示）</p>
             <div class="bg-neutral-50 p-4 rounded-xl flex items-center space-x-2 text-base border border-neutral-200">
-              <span>做</span>
-              <span onclick="revealAnswer(2, '下 (xià)', '下')" id="q2-slot" class="cursor-pointer border-b-2 border-dashed border-rose-500 px-3 py-0.5 text-rose-600 font-bold hover:bg-rose-50 transition">[ クリ克して答えを表示 ]</span>
-              <span>去</span>
+              <span>只有…</span>
+              <span onclick="revealAnswer(2, '才 (cái)', '才')" id="q2-slot" class="cursor-pointer border-b-2 border-dashed border-rose-500 px-3 py-0.5 text-rose-600 font-bold hover:bg-rose-50 transition">[ クリックして答えを表示 ]</span>
+              <span>能…</span>
             </div>
           </div>
 
           <!-- Q3 -->
           <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-            <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q3. タイピングテスト：笑い始める</span>
-            <p class="font-medium text-neutral-900">「笑い始める（笑起来）」を入力しなさい。</p>
+            <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q3. タイピングテスト：克服する</span>
+            <p class="font-medium text-neutral-900">「克服する（克服）」を入力しなさい。</p>
             <div class="bg-neutral-50 p-4 rounded-xl flex items-center space-x-3 text-base border border-neutral-200">
               <input type="text" id="q3-input" placeholder="入力してください..." class="border border-neutral-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-rose-600 w-64 bg-white">
-              <button onclick="checkInput(3, ['笑起来'], '笑起来')" class="bg-neutral-900 hover:bg-rose-600 text-white font-medium px-4 py-2 rounded-lg text-xs transition cursor-pointer">判定</button>
+              <button onclick="checkInput(3, ['克服'], '克服')" class="bg-neutral-900 hover:bg-rose-600 text-white font-medium px-4 py-2 rounded-lg text-xs transition cursor-pointer">判定</button>
             </div>
             <div id="q3-feedback" class="hidden text-sm p-4 rounded-xl"></div>
           </div>
 
           <!-- Q4 -->
           <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
-            <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q4. 選択問題：聞き分ける</span>
-            <p class="font-medium text-neutral-900">「聞いて（誰の声か・何かが）判明する・聞き分ける」を表す補語表現は？</p>
+            <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q4. 選択問題：お互いに</span>
+            <p class="font-medium text-neutral-900">中国語で「お互いに・相互に」を意味する副詞は？</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <button onclick="checkQuiz(4, 0, 0, '太棒了！ 听出来 が聞き分けるを表します。', '不正解！ 听下去 は「聞き続ける」です。', '听出来')" class="hover-lift border border-neutral-200 rounded-xl p-4 text-left bg-white font-medium text-sm">A. 听出来</button>
-              <button onclick="checkQuiz(4, 1, 0, '太棒了！ 听出来 が聞き分けるを表します。', '不正解！ 听下去 は「聞き続ける」です。', '听出来')" class="hover-lift border border-neutral-200 rounded-xl p-4 text-left bg-white font-medium text-sm">B. 听下去</button>
+              <button onclick="checkQuiz(4, 0, 0, '太棒了！ 互相 が正解です。', '不正解！ 克服 は「乗り越える」です。', '互相')" class="hover-lift border border-neutral-200 rounded-xl p-4 text-left bg-white font-medium text-sm">A. 互相</button>
+              <button onclick="checkQuiz(4, 1, 0, '太棒了！ 互相 が正解です。', '不正解！ 克服 は「乗り越える」です。', '互相')" class="hover-lift border border-neutral-200 rounded-xl p-4 text-left bg-white font-medium text-sm">B. 克服</button>
             </div>
             <div id="q4-feedback" class="hidden text-sm p-4 rounded-xl"></div>
           </div>
@@ -167,9 +166,9 @@ const day20Data = {
           <!-- Q5 -->
           <div class="bg-white border border-neutral-200/80 rounded-xl p-6 shadow-sm space-y-4">
             <span class="text-xs font-bold text-neutral-800 bg-neutral-100 px-3 py-1 rounded-full">Q5. 総合フレーズ</span>
-            <p class="font-medium text-neutral-900">「どんな困難に遭おうとも、私は勉強し続けていきます」のフルフレーズは？（タップで表示）</p>
+            <p class="font-medium text-neutral-900">「互いに理解し合ってこそ初めて、本当の友達になれる」のフルフレーズは？（タップで表示）</p>
             <div class="bg-neutral-50 p-4 rounded-xl flex items-center space-x-2 text-base border border-neutral-200">
-              <span onclick="revealAnswer(5, '不管遇到什么困难，我都会坚持学下去。 (不管遇到什么困难，我都会坚持学下去。)', '不管遇到什么困难，我都会坚持学下去。')" id="q5-slot" class="cursor-pointer border-b-2 border-dashed border-rose-500 px-3 py-0.5 text-rose-600 font-bold hover:bg-rose-50 transition">[ クリックして答えを表示 ]</span>
+              <span onclick="revealAnswer(5, '只有互相理解，才能成为真正的朋友。', '只有互相理解，才能成为真正的朋友。')" id="q5-slot" class="cursor-pointer border-b-2 border-dashed border-rose-500 px-3 py-0.5 text-rose-600 font-bold hover:bg-rose-50 transition">[ クリックして答えを表示 ]</span>
             </div>
           </div>
         </section>
@@ -178,13 +177,13 @@ const day20Data = {
         <section class="space-y-6 pt-6 border-t-2 border-neutral-200">
           <div class="border-b border-neutral-200 pb-3">
             <div class="inline-block bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full mb-2">
-              Day 20 Special • Classic Mandopop & Directional Complement
+              Day 19 Special • Destiny & Condition in C-Pop
             </div>
             <h3 class="text-2xl font-bold text-neutral-900">
-              4. 王力宏『唯一』で学ぶ感情の揺れ動きと方向補語
+              4. C-POPの名曲にみる条件表現「原来」と運命のフレーズ
             </h3>
             <p class="text-xs sm:text-sm text-neutral-600 mt-1">
-              アジアを代表するシンガーソングライターの名バラードから、溢れ出す感情のフレーズを学ぼう！
+              世代を超えて愛されるメガヒットナンバーから、純粋な愛と発見のニュアンスを感じ取ろう！
             </p>
           </div>
 
@@ -195,13 +194,13 @@ const day20Data = {
                 <i data-lucide="music" class="w-5 h-5"></i>
               </div>
               <div>
-                <h4 class="text-lg font-bold text-neutral-900">唯一 (Only One - Leehom Wang / 王力宏)</h4>
-                <p class="text-xs text-neutral-500">Legendary Chinese Classic Ballad</p>
+                <h4 class="text-lg font-bold text-neutral-900">小幸运 (A Little Happiness - Hebe Tien / 田馥甄)</h4>
+                <p class="text-xs text-neutral-500">Global Mandopop Phenomenon</p>
               </div>
             </div>
             <p class="text-xs text-neutral-700 leading-relaxed bg-neutral-50 p-3.5 rounded-xl border border-neutral-100">
-              <strong>【音楽文化コラム：『唯一』と普遍のラブソング】</strong><br>
-              中華圏のカラオケで今なお愛され続ける不朽の名曲。「君は僕の唯一の人だ」という切切とした訴えとともに、ふとした瞬間に込み上げてくる感情や問いかけが、美しいピアノ旋律に乗せて歌われます。
+              <strong>【音楽文化コラム：『小幸運』と青春の記憶】</strong><br>
+              映画の主題歌として大ヒットした名曲。「あなたに出会えたことが私の最大の幸せ」という青春の甘酸っぱさと感謝が心に深く響きます。
             </p>
           </div>
 
@@ -217,12 +216,12 @@ const day20Data = {
             <div class="space-y-4 text-xs sm:text-sm">
               <div class="p-4 rounded-xl border-2 border-rose-200 bg-rose-50/30 hover-lift transition space-y-1">
                 <div class="flex justify-between items-start">
-                  <span class="font-bold text-lg text-rose-950">我确定，你就是我的唯一</span>
-                  <button onclick="speak('我确定，你就是我的唯一')" class="text-rose-600 hover:text-rose-700 p-1 cursor-pointer">
+                  <span class="font-bold text-lg text-rose-950">原来你是我最想留住的幸运</span>
+                  <button onclick="speak('原来你是我最想留住的幸运')" class="text-rose-600 hover:text-rose-700 p-1 cursor-pointer">
                     <i data-lucide="volume-2" class="w-4 h-4"></i>
                   </button>
                 </div>
-                <p class="text-neutral-700 font-medium">確信しているよ、君こそが僕の唯一無二の人なのだと（确定 ＝ 確信・確定する）</p>
+                <p class="text-neutral-700 font-medium">本当は、君こそが私が一番引き止めたかった幸運だったんだ</p>
               </div>
             </div>
           </div>
@@ -238,10 +237,10 @@ const day20Data = {
               <div class="p-4 rounded-xl bg-neutral-50 border border-neutral-200/60 space-y-1.5">
                 <div class="flex items-center space-x-2">
                   <span class="bg-rose-600 text-white font-bold px-2 py-0.5 rounded text-xs">ポイント 1</span>
-                  <span class="font-bold text-neutral-900">確信を表す動詞「确定 (quèdìng)」と強調の「就是」</span>
+                  <span class="font-bold text-neutral-900">気づきを表す副詞「原来 (yuánlái)」</span>
                 </div>
                 <p class="text-neutral-700 leading-relaxed">
-                  <code class="bg-neutral-200 px-1 rounded">确定</code>（確信している）に強調の指定詞 <code class="bg-neutral-200 px-1 rounded">就是</code>（まさに〜である）を組み合わせることで、「迷いはもうない」という強い確信を力強く表現することができます。
+                  <code class="bg-neutral-200 px-1 rounded">原来</code> は、後から事実や真実に気づいたときの「あぁ、そうだったのか！」という驚きや感慨を表す副詞です。
                 </p>
               </div>
             </div>
