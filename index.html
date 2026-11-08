@@ -34,22 +34,22 @@
         </div>
       </div>
       
-     <!-- index.html の week-select 部分（Week表記に統一） -->
-<select id="week-select" onchange="changeWeek(this.value)" class="bg-neutral-800 text-rose-400 text-xs font-bold px-3 py-1.5 rounded-lg border border-neutral-700 focus:outline-none cursor-pointer">
-  <option value="1">Week 1 (Day 1 - 7)</option>
-  <option value="2">Week 2 (Day 8 - 14)</option>
-  <option value="3">Week 3 (Day 15 - 21)</option>
-  <option value="4">Week 4 (Day 22 - 28)</option> <!-- ← Week 4 を追加 -->
-</select>
+      <!-- Week Select & Day Buttons Container -->
+      <div class="flex flex-col sm:flex-row items-center gap-3">
+        <select id="week-select" onchange="changeWeek(this.value)" class="bg-neutral-800 text-rose-400 text-xs font-bold px-3 py-1.5 rounded-lg border border-neutral-700 focus:outline-none cursor-pointer">
+          <option value="1">Week 1 (Day 1 - 7)</option>
+          <option value="2">Week 2 (Day 8 - 14)</option>
+          <option value="3">Week 3 (Day 15 - 21)</option>
+          <option value="4">Week 4 (Day 22 - 28)</option>
+        </select>
           
-          <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none"></div>
-        </div>
-
-        <button onclick="showAboutPage()" id="btn-about" class="px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5">
-          <i data-lucide="user" class="w-3.5 h-3.5 text-rose-500"></i>
-          <span>About</span>
-        </button>
+        <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none"></div>
       </div>
+
+      <button onclick="showAboutPage()" id="btn-about" class="px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5">
+        <i data-lucide="user" class="w-3.5 h-3.5 text-rose-500"></i>
+        <span>About</span>
+      </button>
     </div>
   </header>
 
@@ -68,7 +68,7 @@
     </div>
   </footer>
 
-  <!-- Load Lesson Data Scripts (Day 01 - Day 21) -->
+  <!-- Load Lesson Data Scripts (Day 01 - Day 28) -->
   <script src="./data/lessons/day01.js"></script>
   <script src="./data/lessons/day02.js"></script>
   <script src="./data/lessons/day03.js"></script>
@@ -90,6 +90,13 @@
   <script src="./data/lessons/day19.js"></script>
   <script src="./data/lessons/day20.js"></script>
   <script src="./data/lessons/day21.js"></script>
+  <script src="./data/lessons/day22.js"></script>
+  <script src="./data/lessons/day23.js"></script>
+  <script src="./data/lessons/day24.js"></script>
+  <script src="./data/lessons/day25.js"></script>
+  <script src="./data/lessons/day26.js"></script>
+  <script src="./data/lessons/day27.js"></script>
+  <script src="./data/lessons/day28.js"></script>
 
   <!-- Controller Logic -->
   <script>
@@ -197,7 +204,14 @@
         18: typeof day18Data !== 'undefined' ? day18Data : null,
         19: typeof day19Data !== 'undefined' ? day19Data : null,
         20: typeof day20Data !== 'undefined' ? day20Data : null,
-        21: typeof day21Data !== 'undefined' ? day21Data : null
+        21: typeof day21Data !== 'undefined' ? day21Data : null,
+        22: typeof day22Data !== 'undefined' ? day22Data : null,
+        23: typeof day23Data !== 'undefined' ? day23Data : null,
+        24: typeof day24Data !== 'undefined' ? day24Data : null,
+        25: typeof day25Data !== 'undefined' ? day25Data : null,
+        26: typeof day26Data !== 'undefined' ? day26Data : null,
+        27: typeof day27Data !== 'undefined' ? day27Data : null,
+        28: typeof day28Data !== 'undefined' ? day28Data : null
       };
 
       const data = lessonDataMap[dayNum];
