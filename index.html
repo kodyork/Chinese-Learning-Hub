@@ -26,8 +26,9 @@
 
   <!-- Header -->
   <header class="bg-neutral-950 text-white border-b border-neutral-800 sticky top-0 z-50 shadow-md">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-center space-x-3 cursor-pointer" onclick="switchDay(currentActiveDay)">
+    <div class="max-w-6xl mx-auto px-4 py-3.5 flex flex-col lg:flex-row justify-between items-center gap-3">
+      <!-- Brand Logo -->
+      <div class="flex items-center space-x-3 cursor-pointer shrink-0" onclick="switchDay(currentActiveDay)">
         <span class="bg-rose-600 text-white font-bold text-lg px-2.5 py-0.5 rounded shadow-sm">学</span>
         <div>
           <h1 class="font-bold text-lg leading-none tracking-wide">学中文！ Chinese Hub</h1>
@@ -35,7 +36,7 @@
       </div>
 
       <!-- Week Select & Day Buttons Container -->
-      <div class="flex flex-col sm:flex-row items-center gap-3">
+      <div class="flex flex-col sm:flex-row items-center gap-2.5">
         <select id="week-select" onchange="changeWeek(this.value)" class="bg-neutral-800 text-rose-400 text-xs font-bold px-3 py-1.5 rounded-lg border border-neutral-700 focus:outline-none cursor-pointer">
           <option value="1">Week 1 (Day 1 - 7)</option>
           <option value="2">Week 2 (Day 8 - 14)</option>
@@ -47,10 +48,20 @@
         <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none"></div>
       </div>
 
-      <button onclick="showAboutPage()" id="btn-about" class="px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5">
-        <i data-lucide="user" class="w-3.5 h-3.5 text-rose-500"></i>
-        <span>About</span>
-      </button>
+      <!-- Voice Selector & About Button -->
+      <div class="flex items-center gap-2 shrink-0">
+        <div class="flex items-center bg-neutral-900 border border-neutral-800 rounded-xl px-2.5 py-1.5 space-x-1.5" title="ブラウザ内の中国語音声を選択（切替時にサンプル再生）">
+          <i data-lucide="mic" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i>
+          <select id="voice-select" onchange="changeVoice(this.value)" class="bg-transparent text-neutral-200 text-xs font-medium focus:outline-none cursor-pointer max-w-[140px] sm:max-w-[170px] truncate">
+            <option value="">AI音声を検出中...</option>
+          </select>
+        </div>
+
+        <button onclick="showAboutPage()" id="btn-about" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5">
+          <i data-lucide="user" class="w-3.5 h-3.5 text-rose-500"></i>
+          <span>About</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -112,6 +123,126 @@
     let currentActiveDay = 1;
     let currentActiveWeek = 1;
 
+    // ==========================================
+    // AI Natural Voice Selection & Management
+    // ==========================================
+    let availableZhVoices = [];
+    let selectedVoiceURI = '';
+
+    // 自然なAI音声・高品質音声の優先度スコア計算
+    function getVoicePriorityScore(voice) {
+      const name = voice.name;
+      const lang = voice.lang.toLowerCase();
+      let score = 0;
+
+      // 標準中国語（zh-CN / cmn）を最優先、台湾・香港音声は次点
+      if (lang === 'zh-cn' || lang === 'cmn-hans-cn' || lang.includes('zh-cn')) {
+        score += 50;
+      } else if (lang.includes('zh-tw')) {
+        score += 20;
+      } else if (lang.includes('zh-hk')) {
+        score += 10;
+      }
+
+      // 高品質AI・ニューラル音声キーワードの加点
+      if (name.includes('Xiaoxiao')) score += 100;   // Edge 超自然AI女性音声
+      if (name.includes('Yunxi')) score += 95;       // Edge 超自然AI男性音声
+      if (name.includes('Yunyang')) score += 90;     // Edge ニュースキャスター風AI音声
+      if (name.includes('Xiaoyi')) score += 88;      // Edge 柔らかいAI音声
+      if (name.includes('Natural')) score += 80;     // Neural TTS全般
+      if (name.includes('Google')) score += 70;      // Chrome 標準高品質音声
+      if (name.includes('Tingting')) score += 65;    // Apple (iOS/macOS) 高品質音声
+      if (name.includes('Online')) score += 40;      // クラウドベース音声
+
+      return score;
+    }
+
+    // プルダウン表示用の分かりやすいラベル整形
+    function formatVoiceLabel(voice) {
+      let cleanName = voice.name
+        .replace('Microsoft ', '')
+        .replace(' Online (Natural)', ' (AI自然)')
+        .replace(' - Chinese (Mainland)', '')
+        .replace(' - Chinese (Simplified, PRC)', '')
+        .replace('Google ', 'Google ');
+      return cleanName;
+    }
+
+    function initChineseVoices() {
+      if (!('speechSynthesis' in window)) return;
+
+      const allVoices = window.speechSynthesis.getVoices();
+      const zhVoices = allVoices.filter(v =>
+        v.lang.toLowerCase().startsWith('zh') || v.lang.toLowerCase().includes('cmn')
+      );
+
+      if (zhVoices.length === 0) return;
+
+      // 優先度スコア順にソート
+      availableZhVoices = zhVoices.sort((a, b) => getVoicePriorityScore(b) - getVoicePriorityScore(a));
+
+      const voiceSelect = document.getElementById('voice-select');
+      if (!voiceSelect) return;
+
+      // 前回選択した音声がまだ存在すれば維持、なければ最高スコアのAI音声を自動選択
+      const stillExists = availableZhVoices.some(v => v.voiceURI === selectedVoiceURI);
+      if (!stillExists) {
+        selectedVoiceURI = availableZhVoices[0].voiceURI;
+      }
+
+      voiceSelect.innerHTML = '';
+      availableZhVoices.forEach(voice => {
+        const option = document.createElement('option');
+        option.value = voice.voiceURI;
+        option.textContent = formatVoiceLabel(voice);
+        option.className = "bg-neutral-900 text-white";
+        if (voice.voiceURI === selectedVoiceURI) {
+          option.selected = true;
+        }
+        voiceSelect.appendChild(option);
+      });
+    }
+
+    function changeVoice(voiceURI) {
+      selectedVoiceURI = voiceURI;
+      // 声質を切り替えた直後にサンプルボイスを再生して確認できるようにする
+      speak('你好，我们开始学习吧！');
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = initChineseVoices;
+      initChineseVoices();
+    }
+
+    function speak(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        if (availableZhVoices.length === 0) {
+          initChineseVoices();
+        }
+
+        setTimeout(() => {
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.lang = 'zh-CN';
+
+          const targetVoice = availableZhVoices.find(v => v.voiceURI === selectedVoiceURI) || availableZhVoices[0];
+          if (targetVoice) {
+            utterance.voice = targetVoice;
+            utterance.lang = targetVoice.lang;
+          }
+
+          utterance.rate = parseFloat(currentSpeed);
+          utterance.pitch = 1.0;
+          window.speechSynthesis.speak(utterance);
+        }, 50);
+      } else {
+        alert("お使いのブラウザは音声再生に対応していません。");
+      }
+    }
+
+    // ==========================================
+    // Navigation & Lesson Controller
+    // ==========================================
     function changeWeek(weekNum) {
       currentActiveWeek = parseInt(weekNum);
       const startDay = (currentActiveWeek - 1) * 7 + 1;
@@ -149,24 +280,9 @@
       }
     }
 
-    function speak(text) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        setTimeout(() => {
-          const utterance = new SpeechSynthesisUtterance(text);
-          utterance.lang = 'zh-CN';
-          utterance.rate = parseFloat(currentSpeed);
-          window.speechSynthesis.speak(utterance);
-        }, 50);
-      } else {
-        alert("お使いのブラウザは音声再生に対応していません。");
-      }
-    }
-
     function switchDay(dayNum) {
       currentActiveDay = dayNum;
 
-      // 選択された Day に連動して、所属する Week を自動計算・セレクトボックスも同期
       currentActiveWeek = Math.ceil(dayNum / 7);
       const weekSelect = document.getElementById('week-select');
       if (weekSelect && parseInt(weekSelect.value) !== currentActiveWeek) {
@@ -174,13 +290,11 @@
         renderDayButtons((currentActiveWeek - 1) * 7 + 1);
       }
 
-      // Reset About button style
       const btnAbout = document.getElementById('btn-about');
       if (btnAbout) {
-        btnAbout.className = "px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5";
+        btnAbout.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer border border-neutral-800 bg-neutral-900 text-neutral-300 hover:text-white hover:border-neutral-700 flex items-center space-x-1.5";
       }
 
-      // Highlight active day button
       const startDay = (currentActiveWeek - 1) * 7 + 1;
       for (let i = startDay; i < startDay + 7; i++) {
         const btn = document.getElementById(`btn-day${i}`);
@@ -251,7 +365,7 @@
     function showAboutPage() {
       const btnAbout = document.getElementById('btn-about');
       if (btnAbout) {
-        btnAbout.className = "px-3.5 py-2 rounded-xl text-xs font-bold transition cursor-pointer border border-rose-500 bg-rose-600 text-white shadow-sm flex items-center space-x-1.5";
+        btnAbout.className = "px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer border border-rose-500 bg-rose-600 text-white shadow-sm flex items-center space-x-1.5";
       }
 
       const startDay = (currentActiveWeek - 1) * 7 + 1;
@@ -487,6 +601,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
+      initChineseVoices();
       renderDayButtons(1);
       switchDay(1);
     });
