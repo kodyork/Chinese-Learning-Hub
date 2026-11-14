@@ -33,7 +33,7 @@
           <h1 class="font-bold text-lg leading-none tracking-wide">学中文！ Chinese Hub</h1>
         </div>
       </div>
-      
+
       <!-- Week Select & Day Buttons Container -->
       <div class="flex flex-col sm:flex-row items-center gap-3">
         <select id="week-select" onchange="changeWeek(this.value)" class="bg-neutral-800 text-rose-400 text-xs font-bold px-3 py-1.5 rounded-lg border border-neutral-700 focus:outline-none cursor-pointer">
@@ -41,8 +41,9 @@
           <option value="2">Week 2 (Day 8 - 14)</option>
           <option value="3">Week 3 (Day 15 - 21)</option>
           <option value="4">Week 4 (Day 22 - 28)</option>
+          <option value="5">Week 5 (Day 29 - 35)</option>
         </select>
-          
+
         <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none"></div>
       </div>
 
@@ -68,7 +69,7 @@
     </div>
   </footer>
 
-  <!-- Load Lesson Data Scripts (Day 01 - Day 28) -->
+  <!-- Load Lesson Data Scripts (Day 01 - Day 35) -->
   <script src="./data/lessons/day01.js"></script>
   <script src="./data/lessons/day02.js"></script>
   <script src="./data/lessons/day03.js"></script>
@@ -97,6 +98,13 @@
   <script src="./data/lessons/day26.js"></script>
   <script src="./data/lessons/day27.js"></script>
   <script src="./data/lessons/day28.js"></script>
+  <script src="./data/lessons/day29.js"></script>
+  <script src="./data/lessons/day30.js"></script>
+  <script src="./data/lessons/day31.js"></script>
+  <script src="./data/lessons/day32.js"></script>
+  <script src="./data/lessons/day33.js"></script>
+  <script src="./data/lessons/day34.js"></script>
+  <script src="./data/lessons/day35.js"></script>
 
   <!-- Controller Logic -->
   <script>
@@ -211,7 +219,14 @@
         25: typeof day25Data !== 'undefined' ? day25Data : null,
         26: typeof day26Data !== 'undefined' ? day26Data : null,
         27: typeof day27Data !== 'undefined' ? day27Data : null,
-        28: typeof day28Data !== 'undefined' ? day28Data : null
+        28: typeof day28Data !== 'undefined' ? day28Data : null,
+        29: typeof day29Data !== 'undefined' ? day29Data : null,
+        30: typeof day30Data !== 'undefined' ? day30Data : null,
+        31: typeof day31Data !== 'undefined' ? day31Data : null,
+        32: typeof day32Data !== 'undefined' ? day32Data : null,
+        33: typeof day33Data !== 'undefined' ? day33Data : null,
+        34: typeof day34Data !== 'undefined' ? day34Data : null,
+        35: typeof day35Data !== 'undefined' ? day35Data : null
       };
 
       const data = lessonDataMap[dayNum];
@@ -304,7 +319,7 @@
               <i data-lucide="book-open" class="w-5 h-5 text-rose-600"></i>
               <h4 class="text-lg font-bold text-neutral-900">おすすめ中国語教材・リソース</h4>
             </div>
-            
+
             <p class="text-xs text-neutral-600 leading-relaxed">
               学習を進める上で非常に役立つ、おすすめの単語帳、文法書、読解サイト、ポッドキャストを厳選してご紹介します。
             </p>
@@ -417,7 +432,7 @@
               <i data-lucide="link" class="w-5 h-5 text-rose-600"></i>
               <h4 class="text-lg font-bold text-neutral-900">リンク・お問い合わせ</h4>
             </div>
-            
+
             <p class="text-xs text-neutral-600">
               ご質問やフィードバックなどがございましたら、以下のリンクよりお気軽にご連絡ください。
             </p>
