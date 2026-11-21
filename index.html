@@ -43,6 +43,7 @@
           <option value="3">Week 3 (Day 15 - 21)</option>
           <option value="4">Week 4 (Day 22 - 28)</option>
           <option value="5">Week 5 (Day 29 - 35)</option>
+          <option value="6">Week 6 (Day 36 - 42)</option>
         </select>
 
         <div id="day-buttons" class="flex items-center space-x-1 overflow-x-auto max-w-xs sm:max-w-none"></div>
@@ -80,7 +81,7 @@
     </div>
   </footer>
 
-  <!-- Load Lesson Data Scripts (Day 01 - Day 35) -->
+  <!-- Load Lesson Data Scripts (Day 01 - Day 42) -->
   <script src="./data/lessons/day01.js"></script>
   <script src="./data/lessons/day02.js"></script>
   <script src="./data/lessons/day03.js"></script>
@@ -116,6 +117,13 @@
   <script src="./data/lessons/day33.js"></script>
   <script src="./data/lessons/day34.js"></script>
   <script src="./data/lessons/day35.js"></script>
+  <script src="./data/lessons/day36.js"></script>
+  <script src="./data/lessons/day37.js"></script>
+  <script src="./data/lessons/day38.js"></script>
+  <script src="./data/lessons/day39.js"></script>
+  <script src="./data/lessons/day40.js"></script>
+  <script src="./data/lessons/day41.js"></script>
+  <script src="./data/lessons/day42.js"></script>
 
   <!-- Controller Logic -->
   <script>
@@ -340,7 +348,14 @@
         32: typeof day32Data !== 'undefined' ? day32Data : null,
         33: typeof day33Data !== 'undefined' ? day33Data : null,
         34: typeof day34Data !== 'undefined' ? day34Data : null,
-        35: typeof day35Data !== 'undefined' ? day35Data : null
+        35: typeof day35Data !== 'undefined' ? day35Data : null,
+        36: typeof day36Data !== 'undefined' ? day36Data : null,
+        37: typeof day37Data !== 'undefined' ? day37Data : null,
+        38: typeof day38Data !== 'undefined' ? day38Data : null,
+        39: typeof day39Data !== 'undefined' ? day39Data : null,
+        40: typeof day40Data !== 'undefined' ? day40Data : null,
+        41: typeof day41Data !== 'undefined' ? day41Data : null,
+        42: typeof day42Data !== 'undefined' ? day42Data : null
       };
 
       const data = lessonDataMap[dayNum];
